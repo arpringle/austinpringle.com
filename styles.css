@@ -1,0 +1,145 @@
+/*
+
+*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /*Light mode color variables*/
+        --bg: white;
+        --txt: black;
+        --border: rgb(225, 225, 225);
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        /*Dark mode color variables*/
+        --bg: black;
+        --txt: white;
+        --border: rgb(23, 23, 23)
+    }
+
+    .social-icon {
+        filter: invert();
+    }
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--txt);
+    font-family: "Inter";
+}
+
+h1 {
+    font-size: 2vw;
+}
+
+
+h4 {
+    font-size: 1.5vw;
+}
+
+p {
+    font-size: 1.2vw;
+}
+
+a:link {
+    text-decoration: none;
+    color: crimson;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: lightcoral;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+#main-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 65vw;
+
+    display: flex;
+    flex-direction: row;
+
+    border: 5px solid var(--border);
+    border-radius: 8px;
+
+    background-color: transparent;
+
+    align-items: center;
+
+    overflow: scroll;
+}
+
+#pfp {
+    border-radius: 50%;
+    margin: 10%;
+    width:  15vw;
+    height: 15vw;
+}
+
+#text-box {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#social-icons > *{
+    margin-right: 16px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 1000px) {
+
+    body{
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+
+    h4{
+        font-size: 4vw;
+    }
+
+    p {
+        font-size: 3.25vw;
+    }
+
+    #main-box{
+        width: 90vw;
+        flex-direction: column;
+    }
+
+    #text-box{
+        align-items: center;
+        padding-bottom: 10% ;
+    }
+
+    #pfp{
+        border-radius: 50%;
+
+        width:  25vw;
+        height: 25vw;
+    }
+
+    .social-icon{
+        width: 48px;
+        height: 48px;
+    }
+}
