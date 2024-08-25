@@ -1,46 +1,76 @@
 /*
+ *
+ *   Filename: styles.css
+ *
+ *   Description: Stylesheet for austinpringle.com
+ *
+ *   Author: Copyright 2024 Austin Pringle
+ *
+ *   This file is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ */
 
-*/
 
+/* Light mode preference */
 @media (prefers-color-scheme: light) {
     :root {
-        /*Light mode color variables*/
+        /* Light mode color variables */
         --bg: white;
         --txt: black;
         --border: rgb(225, 225, 225);
     }
 }
 
+/* Dark mode preference */
 @media (prefers-color-scheme: dark){
     :root {
-        /*Dark mode color variables*/
+        /* Dark mode color variables */
         --bg: black;
         --txt: white;
         --border: rgb(23, 23, 23)
     }
 
+    /* Recolor the black social icons to be white in dark mode */
     .social-icon {
         filter: invert();
     }
 }
 
+/* General styling for HTML elements*/
+
 body {
+    /* Set the colors of the whole body in accordance with the variables we just set.*/
     background-color: var(--bg);
     color: var(--txt);
+
+    /* Set the default font for everything as Inter*/
     font-family: "Inter";
+    overflow: scroll;
 }
 
 h1 {
-    font-size: 2vw;
+    font-size: 40pt;
+    margin-top: 0px;
+    margin-bottom: 8px;
 }
 
 
 h4 {
-    font-size: 1.5vw;
+    font-size: 24pt;
+    margin-top: 0px;
+    margin-bottom: 32px;
 }
 
 p {
-    font-size: 1.2vw;
+    font-size: 18pt;
+    margin-top: 0px;
+}
+
+img::selection{
+    filter: none;
 }
 
 a:link {
@@ -85,16 +115,18 @@ a:active {
 #pfp {
     border-radius: 50%;
     margin: 10%;
-    width:  15vw;
-    height: 15vw;
+    width:  300px;
+    height: 300px;
 }
 
 #text-box {
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
-#social-icons > *{
+#social-icons > * {
     margin-right: 16px;
 }
 
@@ -103,7 +135,7 @@ a:active {
     height: 32px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1500px) {
 
     body{
         text-align: center;
