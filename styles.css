@@ -64,6 +64,10 @@ h4 {
     margin-bottom: 32px;
 }
 
+h4 > a:link {
+    text-decoration: underline;
+}
+
 p {
     font-size: 18pt;
     margin-top: 0px;
@@ -97,8 +101,6 @@ a:active {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 65vw;
-
     display: flex;
     flex-direction: row;
 
@@ -108,22 +110,23 @@ a:active {
     background-color: transparent;
 
     align-items: center;
+    justify-content: center;
 
     overflow: scroll;
+
+    padding: 64px;
+
+    gap: 128px;
 }
 
 #pfp {
     border-radius: 50%;
-    margin: 10%;
     width:  300px;
     height: 300px;
 }
 
 #text-box {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    width: 600px;
 }
 
 #social-icons > * {
@@ -141,37 +144,7 @@ a:active {
         text-align: center;
     }
 
-    h1 {
-        font-size: 5vw;
-    }
-
-    h4{
-        font-size: 4vw;
-    }
-
-    p {
-        font-size: 3.25vw;
-    }
-
     #main-box{
-        width: 90vw;
         flex-direction: column;
-    }
-
-    #text-box{
-        align-items: center;
-        padding-bottom: 10% ;
-    }
-
-    #pfp{
-        border-radius: 50%;
-
-        width:  25vw;
-        height: 25vw;
-    }
-
-    .social-icon{
-        width: 48px;
-        height: 48px;
     }
 }
