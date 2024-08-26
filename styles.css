@@ -6,9 +6,9 @@
  *
  *   Author: Copyright 2024 Austin Pringle
  *
- *   This file is free software: you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License as published by
- *   the Free Software Foundation, either version 3 of the License, or
+ *   This file is free: you can redistribute it and/or modify it under
+ *   the terms of the GNU General Public License as published by the
+ *   Free Software Foundation, either version 3 of the License, or
  *   (at your option) any later version.
  *
  */
@@ -48,7 +48,7 @@ body {
     font-family: "Inter";
 }
 
-/* For the headings, we set predefined sizes and margins*/
+/* For the headings, set predefined sizes and margins*/
 h1 {
     font-size: 40pt;
     margin-top: 0px;
@@ -66,95 +66,158 @@ p {
     margin-top: 0px;
 }
 
-img::selection{
+img::selection {
     filter: none;
-    }
+}
 
+
+/* Set a nice red color for links*/
 a:link {
     color: crimson;
 }
-
 
 a:hover {
     color: lightcoral;
 }
 
+/* 
+ *  There will be very few links, so the "visited" recoloration is unnecessary.
+ *  Here, make the "visited" psudeo-classes the same as the normal ones.
+ */
+a:visited {
+    color: crimson;
+}
+
+a:visited:hover {
+    color: lightcoral;
+}
+
+/* 
+ * This is the main box of the website.
+ * It sits in the middle of the page and hold all content.
+ */
 #main-box {
+    /*
+     * The main-box is set to a fixed position:
+     * Halfway to the top and halfway to the left of the page.
+     * This only means that the main-box's top-left corner is centered.
+     * To make sure the box itself is absolutely centered, use a transform.
+     */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
+    /* 
+     * The main-box is a flex container.
+     * This makes it easier to properly align its children.
+     * Furthermore, the flex-direction is typically "row," 
+     * but it can change it to column if needed, based on a media query.
+     */
     display: flex;
     flex-direction: row;
 
+    /*
+     * The main-box also has a border.
+     * Its color is also determined by the user's color scheme preference.
+     */
     border: 5px solid var(--border);
     border-radius: 8px;
 
-    background-color: transparent;
-
+    /* Center the children horizontally and vertically within the main-box */
     align-items: center;
     justify-content: center;
 
+    /* 
+     * Use padding and not margins here; 
+     * This allows some breathing room between the border and the content.
+     */
     padding: 64px;
 
+    /*
+     * Instead of fiddling with margins on the flex container children, 
+     * use the gap property to automatically space them.
+     */
     gap: 128px;
 }
 
+/* The pfp is the image of me next to my bio text. It is circular.*/
 #pfp {
     border-radius: 50%;
     width:  300px;
     height: 300px;
 }
 
+/* Limit the width of the text-box so that it doesn't reflow. */
 #text-box {
     width: 600px;
 }
 
+/* The div containing the social icons is a flex container */
+#social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+/*
+ * The social-icons are <a> elements with <img> elements as content.
+ * The default style seems to use the link styling:
+ * In the space between each icon, it tries to make a red underline.
+ *
+ * To work around this, set the <a> elements to have no decoration,
+ * using a style class.
+ */
 .social-icon-link {
     text-decoration: none;
 }
-
-#social-icons > * {
-    margin-right: 16px;
-}
-
+/* Set the size for the social icons. */
 .social-icon {
     width: 32px;
     height: 32px;
 }
 
-@media (max-width: 1500px) {
+@media (orientation: portrait) {
 
     body {
         text-align: center;
     }
 
     h1 {
-        font-size: 4vw;
+        font-size: 5vw;
     }
-    
+
     h2 {
-        font-size: 3vw;
+        font-size: 2.5vw;
+        margin-bottom: 8px;
     }
-    
+
     p {
         font-size: 2vw;
     }
 
     #main-box {
-        height: 75vh;
         flex-direction: column;
-        gap: 32px;
+        padding: 32px;
+        gap: 8px;
     }
 
-    #pfp{
-        height: 16vw;
-        width: 16vw;
+    #text-box {
+        width: 50vw;
     }
 
-    .social-icon {
-        width: 3vw;
-        height: 3vw;
+    #pfp {
+        width: 25vw;
+        height: auto;
+    }
+
+    #social-icons{
+        align-items: center;
+        justify-content: center;
+     
+    }
+
+    .social-icon{
+        height: 5vw;
+        width: 5vw;
     }
 }
