@@ -39,33 +39,26 @@
     }
 }
 
-/* General styling for HTML elements*/
-
 body {
-    /* Set the colors of the whole body in accordance with the variables we just set.*/
+    /* Set the colors of the whole body in accordance with the variables.*/
     background-color: var(--bg);
     color: var(--txt);
 
     /* Set the default font for everything as Inter*/
     font-family: "Inter";
-    overflow: scroll;
 }
 
+/* For the headings, we set predefined sizes and margins*/
 h1 {
     font-size: 40pt;
     margin-top: 0px;
     margin-bottom: 8px;
 }
 
-
-h4 {
+h2 {
     font-size: 24pt;
     margin-top: 0px;
     margin-bottom: 32px;
-}
-
-h4 > a:link {
-    text-decoration: underline;
 }
 
 p {
@@ -75,24 +68,15 @@ p {
 
 img::selection{
     filter: none;
-}
+    }
 
 a:link {
-    text-decoration: none;
     color: crimson;
 }
 
-a:visited {
-    text-decoration: none;
-}
 
 a:hover {
-    text-decoration: none;
     color: lightcoral;
-}
-
-a:active {
-    text-decoration: none;
 }
 
 #main-box {
@@ -112,8 +96,6 @@ a:active {
     align-items: center;
     justify-content: center;
 
-    overflow: scroll;
-
     padding: 64px;
 
     gap: 128px;
@@ -129,6 +111,10 @@ a:active {
     width: 600px;
 }
 
+.social-icon-link {
+    text-decoration: none;
+}
+
 #social-icons > * {
     margin-right: 16px;
 }
@@ -140,11 +126,35 @@ a:active {
 
 @media (max-width: 1500px) {
 
-    body{
+    body {
         text-align: center;
     }
 
-    #main-box{
+    h1 {
+        font-size: 4vw;
+    }
+    
+    h2 {
+        font-size: 3vw;
+    }
+    
+    p {
+        font-size: 2vw;
+    }
+
+    #main-box {
+        height: 75vh;
         flex-direction: column;
+        gap: 32px;
+    }
+
+    #pfp{
+        height: 16vw;
+        width: 16vw;
+    }
+
+    .social-icon {
+        width: 3vw;
+        height: 3vw;
     }
 }
