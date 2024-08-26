@@ -183,30 +183,30 @@ a:visited:hover {
     }
 
     h1 {
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     h2 {
-        font-size: 2.5vw;
-        margin-bottom: 8px;
+        font-size: 4vw;
+        margin-bottom: 5vw;
     }
 
     p {
-        font-size: 2vw;
+        font-size: 4vw;
     }
 
     #main-box {
         flex-direction: column;
         padding: 32px;
-        gap: 8px;
+        gap: 2vw;
     }
 
     #text-box {
-        width: 50vw;
+        width: 75vw;
     }
 
     #pfp {
-        width: 25vw;
+        width: 35vw;
         height: auto;
     }
 
