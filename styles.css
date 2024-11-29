@@ -1,15 +1,14 @@
 /*
  *
- *   Filename: styles.css
+ *  Filename: styles.css
  *
- *   Description: Stylesheet for austinpringle.com
+ *  Description: Stylesheet for austinpringle.com
  *
- *   Author: Copyright 2024 Austin Pringle
+ *  Author: Copyright 2024 Austin Pringle
  *
- *   This file is free: you can redistribute it and/or modify it under
- *   the terms of the GNU General Public License as published by the
- *   Free Software Foundation, either version 3 of the License, or
- *   (at your option) any later version.
+ *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
+ *  Public License as published by the Free Software Foundation, either version 3 of the License,
+ *  or (at your option) any later version.
  *
  */
 
@@ -38,6 +37,27 @@
         filter: invert();
     }
 }
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(10px); /* First bounce */
+    }
+    40% {
+      transform: translateY(0); /* Return to original position */
+    }
+    55% {
+      transform: translateY(10px); /* Second bounce */
+    }
+    90% {
+      transform: translateY(0); /* Return to original position */
+    }
+    100% {
+      transform: translateY(0); /* End at original position */
+    }
+  }
 
 body {
     /* Set the colors of the whole body in accordance with the variables.*/
@@ -81,8 +101,7 @@ a:hover {
 }
 
 /* 
- *  There will be very few links, so the "visited" recoloration is unnecessary.
- *  Here, make the "visited" psudeo-classes the same as the normal ones.
+ *  Make the "visited" pseudo-classes the same as the normal ones.
  */
 a:visited {
     color: crimson;
@@ -92,39 +111,37 @@ a:visited:hover {
     color: lightcoral;
 }
 
+#intro-holder {
+    display: flex;
+    justify-content: center;
+}
+
 /* 
- * This is the main box of the website.
+ * This is the intro box of the website.
  * It sits in the middle of the page and hold all content.
  */
-#main-box {
-    /*
-     * The main-box is set to a fixed position:
-     * Halfway to the top and halfway to the left of the page.
-     * This only means that the main-box's top-left corner is centered.
-     * To make sure the box itself is absolutely centered, use a transform.
-     */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+#intro-box {
     /* 
-     * The main-box is a flex container.
+     * The intro-box is a flex container.
      * This makes it easier to properly align its children.
      * Furthermore, the flex-direction is typically "row," 
      * but it can change it to column if needed, based on a media query.
      */
     display: flex;
     flex-direction: row;
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+    width: fit-content;
+    
 
     /*
-     * The main-box also has a border.
+     * The intro-box also has a border.
      * Its color is also determined by the user's color scheme preference.
      */
     border: 5px solid var(--border);
     border-radius: 8px;
 
-    /* Center the children horizontally and vertically within the main-box */
+    /* Center the children horizontally and vertically within the intro-box */
     align-items: center;
     justify-content: center;
 
@@ -138,7 +155,9 @@ a:visited:hover {
      * Instead of fiddling with margins on the flex container children, 
      * use the gap property to automatically space them.
      */
-    gap: 128px;
+    gap: 100px;
+
+    overflow: scroll;
 }
 
 /* The pfp is the image of me next to my bio text. It is circular.*/
@@ -176,88 +195,10 @@ a:visited:hover {
     height: 32px;
 }
 
-@media (orientation: landscape) and (max-width: 1200px) {
-    h1 {
-        font-size: 5vw;
-    }
-
-    h2 {
-        font-size: 3vw;
-        margin-bottom: 3vw;
-    }
-
-    p {
-        font-size: 2vw;
-    }
-
-    #main-box {
-        padding: 32px;
-        gap: 5vw;
-        max-height: 90vh;
-    }
-
-    #text-box {
-        width: 50vw;
-    }
-
-    #pfp {
-        width: 25vw;
-        height: auto;
-    }
-
-    #social-icons{
-        align-items: center;
-    }
-
-    .social-icon{
-        height: 3vw;
-        width: 3vw;
-    }
+#scroll-message {
+    text-align: center;
 }
 
-@media (orientation: portrait) {
-
-    body {
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 6vw;
-    }
-
-    h2 {
-        font-size: 4vw;
-        margin-bottom: 5vw;
-    }
-
-    p {
-        font-size: 4vw;
-    }
-
-    #main-box {
-        flex-direction: column;
-        padding: 32px;
-        gap: 2vw;
-        max-height: 90vh;
-    }
-
-    #text-box {
-        width: 75vw;
-    }
-
-    #pfp {
-        width: 35vw;
-        height: auto;
-    }
-
-    #social-icons{
-        align-items: center;
-        justify-content: center;
-     
-    }
-
-    .social-icon{
-        height: 6vw;
-        width: 6vw;
-    }
+#bouncing-arrow {
+    animation: bounce 4s ease infinite; /* 4 seconds for each loop, repeats infinitely */
 }
