@@ -11,7 +11,7 @@
  *  or (at your option) any later version.
  *
  */
-
+ @import url("font-faces/inter-variable/inter-variable.css");
 
 /* Light mode preference */
 @media (prefers-color-scheme: light) {
@@ -42,20 +42,23 @@
     0% {
       transform: translateY(0);
     }
-    25% {
-      transform: translateY(10px); /* First bounce */
+    10% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(10px);
+    }
+    30% {
+      transform: translateY(0);
     }
     40% {
-      transform: translateY(0); /* Return to original position */
+      transform: translateY(10px);
     }
-    55% {
-      transform: translateY(10px); /* Second bounce */
-    }
-    90% {
-      transform: translateY(0); /* Return to original position */
+    50% {
+      transform: translateY(0);
     }
     100% {
-      transform: translateY(0); /* End at original position */
+        transform: translateY(0);
     }
   }
 
@@ -111,6 +114,14 @@ a:visited:hover {
     color: lightcoral;
 }
 
+header {
+    padding: 10px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
 #intro-holder {
     display: flex;
     justify-content: center;
@@ -129,8 +140,8 @@ a:visited:hover {
      */
     display: flex;
     flex-direction: row;
-    margin-top: 25vh;
-    margin-bottom: 10vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
     width: fit-content;
     
 
@@ -138,7 +149,7 @@ a:visited:hover {
      * The intro-box also has a border.
      * Its color is also determined by the user's color scheme preference.
      */
-    border: 5px solid var(--border);
+    border: 8px solid var(--border);
     border-radius: 8px;
 
     /* Center the children horizontally and vertically within the intro-box */
@@ -200,5 +211,5 @@ a:visited:hover {
 }
 
 #bouncing-arrow {
-    animation: bounce 4s ease infinite; /* 4 seconds for each loop, repeats infinitely */
+    animation: bounce 5s ease infinite;
 }
