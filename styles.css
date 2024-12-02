@@ -11,11 +11,11 @@
  *  or (at your option) any later version.
  *
  */
- @import url("font-faces/inter-variable/inter-variable.css");
+@import url("font-faces/inter-variable/inter-variable.css");
 
 /* Light mode preference */
 @media (prefers-color-scheme: light) {
-    :root {
+    html {
         /* Light mode color variables */
         --bg: white;
         --txt: black;
@@ -24,8 +24,8 @@
 }
 
 /* Dark mode preference */
-@media (prefers-color-scheme: dark){
-    :root {
+@media (prefers-color-scheme: dark) {
+    html {
         /* Dark mode color variables */
         --bg: black;
         --txt: white;
@@ -60,7 +60,17 @@
     100% {
         transform: translateY(0);
     }
-  }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 body {
     /* Set the colors of the whole body in accordance with the variables.*/
@@ -89,14 +99,27 @@ p {
     margin-top: 0px;
 }
 
-img::selection {
-    filter: none;
+button {
+    background-color: transparent;
+    border-color: transparent;
 }
 
+*::selection {
+    background-color: crimson;
+}
+
+a > img {
+    /*TODO, enlarge on hover animation?*/
+}
 
 /* Set a nice red color for links*/
 a:link {
     color: crimson;
+}
+
+a:link::selection {
+    color: white;
+    text-decoration-color: white;
 }
 
 a:hover {
@@ -115,12 +138,28 @@ a:visited:hover {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
     padding: 10px;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 2;
-  }
+}
+
+#header-left-span {
+    text-align: left;
+}
+
+#header-right-span {
+    text-align: right;
+}
+
+#color-scheme-button .social-icon.animate {
+    animation: spin 1s ease forwards;
+}
 
 #intro-holder {
     display: flex;
