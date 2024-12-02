@@ -179,7 +179,7 @@ header {
      */
     display: flex;
     flex-direction: row;
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-bottom: 5vh;
     width: fit-content;
     
@@ -210,6 +210,23 @@ header {
     overflow: scroll;
 }
 
+@media screen and (orientation: portrait) {
+    #intro-box {
+        margin-left: ;
+        flex-direction: column;
+        
+    }
+
+    #intro-text-box > h1, #intro-text-box > h2,  #intro-text-box > h5{
+        text-align: center;
+    }
+
+    #social-icons {
+        justify-content: center;
+    }
+}
+
+
 /* The pfp is the image of me next to my bio text. It is circular.*/
 #pfp {
     border-radius: 50%;
@@ -218,7 +235,7 @@ header {
 }
 
 /* Limit the width of the text-box so that it doesn't reflow. */
-#text-box {
+#intro-text-box {
     width: 600px;
 }
 
