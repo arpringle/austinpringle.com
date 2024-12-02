@@ -78,7 +78,7 @@ body {
     color: var(--txt);
 
     /* Set the default font for everything as Inter*/
-    font-family: "Inter";
+    font-family: "Inter Variable";
 }
 
 /* For the headings, set predefined sizes and margins*/
