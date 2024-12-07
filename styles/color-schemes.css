@@ -1,0 +1,56 @@
+/*
+ *
+ *  Filename: color-schemes.css
+ *
+ *  Description: Describes color schemes for austinpringle.com
+ *
+ *  Author: Copyright 2024 Austin Pringle
+ *
+ *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
+ *  Public License as published by the Free Software Foundation, either version 3 of the License,
+ *  or (at your option) any later version.
+ *
+ */
+
+ /* 
+  * If there is no JavaScript support on the machine, the CSS media queries here handle the color
+  * scheme preferences. However, if JavaScript is enabled, this is overridden by
+  * scheme-switcher.js, which works by selectively applying the .light-mode and .dark-mode style
+  * classes in accordance with its own logic.
+  */
+
+/* Light mode preference */
+@media (prefers-color-scheme: light) {
+    html {
+        /* Light mode color variables */
+        --bg: white;
+        --txt: black;
+        --border: rgb(225, 225, 225);
+        --filter: none;
+    }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+    html {
+        /* Dark mode color variables */
+        --bg: black;
+        --txt: white;
+        --border: rgb(23, 23, 23);
+        --filter: invert();
+    }
+}
+
+.light-mode {
+    --bg: white;
+    --txt: black;
+    --border: rgb(225, 225, 225);
+    --filter: none;
+}
+
+.dark-mode {
+    --bg: black;
+    --txt: white;
+    --border: rgb(23, 23, 23);
+    --filter: invert();
+}

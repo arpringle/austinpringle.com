@@ -1,0 +1,47 @@
+/*
+ *
+ *  Filename: animations.css
+ *
+ *  Description: CSS animation keyframes for austinpringle.com
+ *
+ *  Author: Copyright 2024 Austin Pringle
+ *
+ *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
+ *  Public License as published by the Free Software Foundation, either version 3 of the License,
+ *  or (at your option) any later version.
+ *
+ */
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(10px);
+    }
+    30% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

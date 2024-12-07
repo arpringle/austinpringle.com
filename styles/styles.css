@@ -1,0 +1,282 @@
+/*
+ *
+ *  Filename: styles.css
+ *
+ *  Description: Stylesheet for austinpringle.com
+ *
+ *  Author: Copyright 2024 Austin Pringle
+ *
+ *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
+ *  Public License as published by the Free Software Foundation, either version 3 of the License,
+ *  or (at your option) any later version.
+ *
+ */
+
+/* Import Fonts */
+@import url("./font-faces/inter-variable/inter-variable.css");
+
+/* Import Animations */
+@import url("./animations.css");
+
+@import url("./color-schemes.css");
+
+header {
+    transition: background-color 1s;
+}
+
+#header-title{
+    transition: color 0.25s;
+}
+
+body, img {
+    transition: background-color 1s, color 1s, filter 1s;
+}
+
+#intro-box {
+    transition: border 1s;
+}
+
+body {
+    /* Set the colors of the whole body in accordance with the variables.*/
+    background-color: var(--bg);
+    color: var(--txt);
+
+    /* Set the default font for everything as Inter*/
+    font-family: "Inter Variable";
+
+    margin: 0px;
+}
+
+/* For the headings, set predefined sizes and margins*/
+h1 {
+    font-size: 40pt;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-size: 24pt;
+    margin-top: 0px;
+    margin-bottom: 32px;
+}
+
+h3 {
+    font-size: 18pt;
+}
+
+h5 {
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+p {
+    font-size: 18pt;
+}
+
+button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+*::selection {
+    background-color: crimson;
+}
+/* Set a nice red color for links*/
+a:link {
+    color: crimson;
+}
+
+a:link::selection {
+    color: white;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: lightcoral;
+}
+
+/* 
+ *  Make the "visited" pseudo-classes the same as the normal ones.
+ */
+a:visited {
+    color: crimson;
+}
+
+a:visited:hover {
+    color: lightcoral;
+}
+
+header {
+    background-color: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+#header-left-span {
+    text-align: left;
+}
+
+#header-right-span {
+    gap: 32px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+}
+
+nav a {
+    font-size: 14pt;
+}
+
+#color-scheme-button .social-icon.animate {
+    animation: spin 1s ease forwards;
+}
+
+#intro-holder {
+    display: flex;
+    justify-content: center;
+}
+
+/* 
+ * This is the intro box of the website.
+ * It sits in the middle of the page and hold all content.
+ */
+#intro-box {
+    /* 
+     * The intro-box is a flex container.
+     * This makes it easier to properly align its children.
+     * Furthermore, the flex-direction is typically "row," 
+     * but it can change it to column if needed, based on a media query.
+     */
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    width: fit-content;
+    
+
+    /*
+     * The intro-box also has a border.
+     * Its color is also determined by the user's color scheme preference.
+     */
+    border: 8px solid var(--border);
+    border-radius: 8px;
+
+    /* Center the children horizontally and vertically within the intro-box */
+    align-items: center;
+    justify-content: center;
+
+    /* 
+     * Use padding and not margins here; 
+     * This allows some breathing room between the border and the content.
+     */
+    padding: 64px;
+
+    /*
+     * Instead of fiddling with margins on the flex container children, 
+     * use the gap property to automatically space them.
+     */
+    gap: 100px;
+}
+
+@media screen and (orientation: portrait) {
+    #intro-box {
+        gap: 50px;
+        flex-direction: column;
+        
+    }
+
+    #intro-text-box > h1, #intro-text-box > h2 {
+        text-align: center;
+    }
+    
+    #location-span {
+        justify-content: center;
+    }
+
+    #social-icons {
+        justify-content: center;
+    }
+}
+
+
+/* The pfp is the image of me next to my bio text. It is circular.*/
+#pfp {
+    border-radius: 50%;
+    width:  300px;
+    height: 300px;
+}
+
+/* Limit the width of the text-box so that it doesn't reflow. */
+#intro-text-box {
+    width: 600px;
+}
+
+#location-span {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#location-span > * {
+    margin-top: 8px;
+}
+
+/* The div containing the social icons is a flex container */
+#social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+/*
+ * The social-icons are <a> elements with <img> elements as content.
+ * The default style seems to use the link styling:
+ * In the space between each icon, it tries to make a red underline.
+ *
+ * To work around this, set the <a> elements to have no decoration,
+ * using a style class.
+ */
+.social-icon-link {
+    text-decoration: none;
+}
+/* Set the size for the social icons. */
+.social-icon {
+    width: 32px;
+    height: 32px;
+    filter: var(--filter);
+}
+
+.social-icon::selection {
+    filter: none;
+}
+
+.social-icon.small {
+    width: 24px;
+    height: 24px;
+}
+
+#scroll-message {
+    text-align: center;
+}
+
+#bouncing-arrow {
+    animation: bounce 5s ease infinite;
+}
+
+#main-content {
+    display: flex;
+}
