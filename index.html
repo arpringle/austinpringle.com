@@ -21,28 +21,34 @@
 <html>
     <head>
         <title>Austin Pringle</title>
-        <link rel="stylesheet" href="styles.css"/>
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="styles/styles.css"/>
+        <script src="scheme-switcher.js"></script>
         <link rel="me" href="https://mas.to/@apringle828"/>
     </head>
     <body>
         <header class="sticky-header">
             <span id="header-left-span">
-                <h3>Austin Pringle</h3>
+                <h3 id="header-title">Austin Pringle</h3>
             </span>
             <span id="header-right-span">
                 <nav>
-                    <!-- TODO -->
+                    <a>Projects</a>
+                    <a>Blog</a>
                 </nav>
+                <button id="color-scheme-button" hidden="true">
+                    <img id="color-scheme-button-image" class="social-icon"/>
+                </button>
             </span>
-            
         </header>
         <div id="intro-holder">
             <div id="intro-box">
                 <img id=pfp src="pics/pfp.jpeg">
                 <div id="intro-text-box">
                     <h1>Austin Pringle</h1>
-                    <h5><img src="icons/location-dot.svg" class="social-icon"/> Pittsburgh, PA</h5>
+                    <span id="location-span">
+                        <img src="icons/location-dot.svg" class="social-icon small"/>
+                        <h5>Pittsburgh, PA</h5>
+                    </span>
                     <h2>Student at <a href="https://pennwest.edu">PennWest California</a></h2>
                     <p>Hello! My name is Austin Pringle. I'm a student pursuing a degree in Computer Information Systems, with a minor in Computer Science.</p>
                     <p>I can program in several languages, and I enjoy designing and implementing systems. I've dabbled in many diverse areas in tech; I'm a tinkerer at heart!</p>
@@ -54,7 +60,7 @@
                             <img src="icons/linkedin.svg" class="social-icon" title="LinkedIn">
                         </a>
                         <a href="https://github.com/arpringle" class="social-icon-link">
-                            <img src="icons/github.svg" class="social-icon" title="GitHub">
+                            <img src="icons/github.svg" class="social-icon " title="GitHub">
                         </a>
                     </div>
                 </div>
@@ -63,6 +69,12 @@
         <div id="scroll-message">
             <h3>Scroll to Learn More</h3>
             <img class="social-icon" src="icons/angle-down.svg" id="bouncing-arrow"/>
+        </div>
+        <br>
+        <div id="main_content">
+            <div class="content-section"></div>
+            <h2 class="section-header">Skills</h2>
+
         </div>
     </body>
 </html>

@@ -1,9 +1,0 @@
-/* inter-variable */
-@font-face {
-	font-family: Inter Variable;
-	font-style: normal;
-	font-weight: 100 900;
-	font-stretch: 100%;
-	src: local("Inter Variable"), local("InterVariable"), url(inter-variable.woff2) format("woff2");
-}
-
