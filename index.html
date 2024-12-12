@@ -18,25 +18,29 @@
     All logos are copyright their respective owners.
 
 -->
-<html>
+<html lang="en">
     <head>
         <title>Austin Pringle</title>
-        <link rel="stylesheet" href="styles/styles.css"/>
-        <script src="scheme-switcher.js"></script>
         <link rel="me" href="https://mas.to/@apringle828"/>
+        <link rel="prefetch" href="icons/sun-bright.svg"/>
+        <link rel="prefetch" href="icons/moon.svg"/>
+        <link rel="stylesheet" href="styles/styles.css"/>
+        <link rel="stylesheet" href="styles/index.css"/>
+        <script src="scheme-switcher.js"></script>
+        <script src="header-scroll.js"></script>
     </head>
     <body>
-        <header class="sticky-header">
+        <header class="border" id="sticky-header">
             <span id="header-left-span">
-                <h3 id="header-title">Austin Pringle</h3>
+                <a href="."><h3 id="header-title">Austin Pringle</h3></a>
             </span>
             <span id="header-right-span">
                 <nav>
-                    <a>Projects</a>
-                    <a>Blog</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="blog.html">Blog</a>
                 </nav>
-                <button id="color-scheme-button" hidden="true">
-                    <img id="color-scheme-button-image" class="social-icon"/>
+                <button id="color-scheme-button" hidden="true" title="Toggle Dark Mode">
+                    <img id="color-scheme-button-image" class="icon"/>
                 </button>
             </span>
         </header>
@@ -44,37 +48,104 @@
             <div id="intro-box">
                 <img id=pfp src="pics/pfp.jpeg">
                 <div id="intro-text-box">
-                    <h1>Austin Pringle</h1>
+                    <h1 id="intro-box-header">Austin Pringle</h1>
                     <span id="location-span">
-                        <img src="icons/location-dot.svg" class="social-icon small"/>
+                        <img src="icons/location-dot.svg" class="icon small"/>
                         <h5>Pittsburgh, PA</h5>
                     </span>
-                    <h2>Student at <a href="https://pennwest.edu">PennWest California</a></h2>
-                    <p>Hello! My name is Austin Pringle. I'm a student pursuing a degree in Computer Information Systems, with a minor in Computer Science.</p>
-                    <p>I can program in several languages, and I enjoy designing and implementing systems. I've dabbled in many diverse areas in tech; I'm a tinkerer at heart!</p>
-                    <div id="social-icons">
-                        <a href="mailto:contact@austinpringle.com" class="social-icon-link">
-                            <img src="icons/email.svg" class="social-icon" title="Email">
+                    <h2>
+                        Student at <a href="https://pennwest.edu" class="accent-link">
+                        PennWest California</a>
+                    </h2>
+                    <p>
+                        Hello! My name is Austin Pringle. I'm a student pursuing a degree in Computer
+                        Information Systems, with a minor in Computer Science.
+                    </p>
+                    <p>
+                        I can program in several languages, and I enjoy designing and implementing
+                        systems. I've dabbled in many different areas of tech; some of my
+                        projects can be found on this website. 
+                    </p>
+                    <div id="icons">
+                        <a href="mailto:contact@austinpringle.com" class="icon-link">
+                            <img src="icons/email.svg" class="icon" title="Email">
                         </a>
-                        <a href="https://linkedin.com/in/austin-pringle0828" class="social-icon-link">
-                            <img src="icons/linkedin.svg" class="social-icon" title="LinkedIn">
+                        <a href="https://linkedin.com/in/austin-pringle0828" class="icon-link">
+                            <img src="icons/linkedin.svg" class="icon" title="LinkedIn">
                         </a>
-                        <a href="https://github.com/arpringle" class="social-icon-link">
-                            <img src="icons/github.svg" class="social-icon " title="GitHub">
+                        <a href="https://github.com/arpringle" class="icon-link">
+                            <img src="icons/github.svg" class="icon " title="GitHub">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
         <div id="scroll-message">
-            <h3>Scroll to Learn More</h3>
-            <img class="social-icon" src="icons/angle-down.svg" id="bouncing-arrow"/>
+            <img class="icon" src="icons/angle-down.svg" id="bouncing-arrow"/>
         </div>
-        <br>
-        <div id="main_content">
-            <div class="content-section"></div>
-            <h2 class="section-header">Skills</h2>
-
-        </div>
+        <main>
+            <div class="content-section">
+                <span class="section-header-span">
+                    <hr />
+                    <h4 class="section-header">My Skills</h4>
+                    <hr />
+                </span>
+                <div id="skill-grid">
+                    <a href="projects.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <div class="skill-grid-item-header">
+                                <img src="pics/rust-logo.png"/>
+                                <h3>Rust</h3>
+                            </div>
+                            <p>
+                                I've built quite a few projects in Rust at this point. I have found
+                                that Rust is a very useful programming language when you need low-level
+                                performance without the memory-related pitfalls of a language such as
+                                C.
+                            </p>
+                            <span class="projects-link-span">
+                                <h6>See Rust Projects</h6>
+                                <img class="icon small" src="icons/angle-right.svg"/>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="projects.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <div class="skill-grid-item-header">
+                                <img src="pics/python-logo.png"/>
+                                <h3>Python</h3>
+                            </div>
+                            <p>
+                                When it comes to rapid development, there's no competition; Python
+                                lets you get things done quickly. I've used Python for everything
+                                from one-off scripts to full GUI applications.
+                            </p>
+                            <span class="projects-link-span">
+                                <h6>See Python Projects</h6>
+                                <img class="icon small" src="icons/angle-right.svg"/>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="projects.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <div class="skill-grid-item-header">
+                                <img src="pics/gtk-logo.png"/>
+                                <h3>GTK</h3>
+                            </div>
+                            <p>
+                                GTK is a cross-platform GUI widget toolkit. It's written in C, but
+                                has language bindings for many different languages. I've used GTK
+                                to write a few GUI applications, and I've contributed code to a
+                                number of open-source GTK applications.
+                            </p>
+                            <span class="projects-link-span">
+                                <h6>See GTK Projects</h6>
+                                <img class="icon small" src="icons/angle-right.svg"/>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
