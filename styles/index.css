@@ -1,0 +1,124 @@
+#intro-holder {
+    display: flex;
+    justify-content: center;
+}
+
+#intro-box {
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+    margin-bottom: 7%;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    
+    border: 8px solid var(--border);
+    border-radius: 8px;
+
+    padding: 64px;
+    gap: 100px;
+}
+
+#pfp {
+    border-radius: 50%;
+    width:  300px;
+    height: 300px;
+}
+
+#intro-text-box {
+    width: 600px;
+}
+
+#intro-box-header {
+    margin: 0px;
+}
+
+#location-span {
+    margin-top: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#icons {
+    display: flex;
+    gap: 16px;
+}
+
+#scroll-message {
+    text-align: center;
+    margin-bottom: 15vh;
+}
+
+#bouncing-arrow {
+    animation: bounce 5s ease infinite;
+}
+
+#skill-grid {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+    gap: 32px;
+}
+
+.skill-grid-item-link, .skill-grid-item-link:link {
+    color: var(--txt);
+    text-decoration: none;
+}
+
+.skill-grid-item-link:link:hover {
+    color: var(--txt);
+    text-decoration: none;
+}
+
+.skill-grid-item-link {
+    width: fit-content;
+}
+
+.skill-grid-item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--border);
+    border-radius: 25px;
+    width: 400px;
+    height: 400px;
+    padding: 32px;
+    transition: transform 0.5s;
+}
+
+.skill-grid-item:hover {
+    transform: scale(1.05);
+}
+
+.skill-grid-item-header {
+    display: flex;
+
+    gap: 32px;
+
+    align-items: center;
+
+    margin-bottom: 32px;
+
+    transition: background-color 1s;
+}
+
+.skill-grid-item-header img {
+    height: 64px;
+    width: 64px;
+}
+
+.projects-link-span {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.skill-grid-item:hover .projects-link-span img {
+    animation: point 3s ease infinite;
+}

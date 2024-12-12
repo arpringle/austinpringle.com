@@ -36,6 +36,42 @@
     }
 }
 
+@keyframes fade {
+  0% {
+      transform: translateX(-1000);
+      opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes point {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(10px);
+    }
+    30% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(10px);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

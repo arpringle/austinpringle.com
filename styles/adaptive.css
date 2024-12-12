@@ -1,0 +1,54 @@
+/*
+ *
+ *  Filename: animations.css
+ *
+ *  Description: CSS media queries for adapting austinpringle.com to various screen sizes
+ *
+ *  Author: Copyright 2024 Austin Pringle
+ *
+ *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
+ *  Public License as published by the Free Software Foundation, either version 3 of the License,
+ *  or (at your option) any later version.
+ *
+ */
+
+@media screen and (orientation: portrait) {
+    #intro-box {
+        gap: 50px !important;
+        flex-direction: column !important;
+        
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center !important;
+    }
+    
+    #location-span {
+        justify-content: center !important;
+    }
+
+    #icons {
+        justify-content: center !important;
+    }
+
+    .section-header-span {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        align-content: center !important;
+        margin-left: 5vw !important;
+        margin-right: 5vw !important;
+    }
+
+    hr {
+        border: none !important;;
+        border-top: 2px solid var(--txt) !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    .section-header {
+        margin-left: 32px !important;
+        margin-right: 32px !important;
+    }
+}
