@@ -115,13 +115,9 @@ main {
 
 .skill-grid-item-header {
     display: flex;
-
     gap: 2rem;
-
     align-items: center;
-
     margin-bottom: 2rem;
-
     transition: background-color 1s;
 }
 
@@ -136,6 +132,7 @@ main {
     gap: 1rem;
     align-self: flex-end;
     margin-top: auto;
+    width: fit-content;
 }
 
 .skill-grid-item:hover .projects-link-span img {
