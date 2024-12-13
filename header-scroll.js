@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     header.classList.remove("border");
 
     window.onscroll = function (){
-        if (document.documentElement.scrollTop == 0) {
+        if (document.documentElement.scrollTop <= 0) {
             header.className = "";
         }
 
