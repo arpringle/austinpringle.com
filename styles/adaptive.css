@@ -29,3 +29,14 @@
         justify-content: center !important;
     }
 }
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 16pt;
+    }
+
+    #intro-box{
+        border: none !important;
+        padding: 0px !important;
+    }
+}
