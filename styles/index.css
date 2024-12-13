@@ -26,26 +26,26 @@ main {
     display: flex;
     flex-direction: row;
     margin-top: 3vh;
-    margin-bottom: 7%;
+    margin-bottom: 10vh;
     width: fit-content;
     align-items: center;
     justify-content: center;
     
-    border: 8px solid var(--border);
-    border-radius: 8px;
+    border: 0.5rem solid var(--border);
+    border-radius: 0.5rem;
 
-    padding: 64px;
-    gap: 100px;
+    padding: 3rem;
+    gap: 5rem;
 }
 
 #pfp {
     border-radius: 50%;
-    width:  300px;
-    height: 300px;
+    width: 18rem;
+    height: 18rem;
 }
 
 #intro-text-box {
-    width: 600px;
+    width: 37rem;
 }
 
 #intro-box-header {
@@ -53,20 +53,20 @@ main {
 }
 
 #location-span {
-    margin-top: 4px;
+    margin-top: 0.25rem;
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 #icons {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
 }
 
 #scroll-message {
     text-align: center;
-    margin-bottom: 15vh;
+    margin-bottom: 20vh;
 }
 
 #bouncing-arrow {
@@ -79,8 +79,8 @@ main {
     justify-content: center;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+    gap: 2rem;
 }
 
 .skill-grid-item-link, .skill-grid-item-link:link {
@@ -101,10 +101,10 @@ main {
     display: flex;
     flex-direction: column;
     background-color: var(--border);
-    border-radius: 25px;
-    width: 400px;
-    height: 400px;
-    padding: 32px;
+    border-radius: 3rem;
+    width: 25rem;
+    height: 25rem;
+    padding: 2rem;
     transition: transform 0.5s;
 }
 
@@ -115,24 +115,24 @@ main {
 .skill-grid-item-header {
     display: flex;
 
-    gap: 32px;
+    gap: 2rem;
 
     align-items: center;
 
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 
     transition: background-color 1s;
 }
 
 .skill-grid-item-header img {
-    height: 64px;
-    width: 64px;
+    height: 4rem;
+    width: 4rem;
 }
 
 .projects-link-span {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
     align-self: flex-end;
     margin-top: auto;
 }

@@ -11,12 +11,10 @@
  *  or (at your option) any later version.
  *
  */
-
 @media screen and (orientation: portrait) {
     #intro-box {
-        gap: 50px !important;
+        gap: 2.5rem !important;
         flex-direction: column !important;
-        
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -29,26 +27,5 @@
 
     #icons {
         justify-content: center !important;
-    }
-
-    .section-header-span {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        align-content: center !important;
-        margin-left: 5vw !important;
-        margin-right: 5vw !important;
-    }
-
-    hr {
-        border: none !important;;
-        border-top: 2px solid var(--txt) !important;
-        display: block !important;
-        margin: 0 !important;
-    }
-
-    .section-header {
-        margin-left: 32px !important;
-        margin-right: 32px !important;
     }
 }

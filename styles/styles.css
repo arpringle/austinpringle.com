@@ -32,39 +32,39 @@ body {
 }
 
 h1 {
-    font-size: 40pt;
-    margin-top: 40pt;
-    margin-bottom: 20pt;
+    font-size: 3.3rem;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
 }
 
 h2 {
-    font-size: 24pt;
-    margin-top: 24pt;
-    margin-bottom: 24pt;
+    font-size: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 h3 {
-    font-size: 18pt;
+    font-size: 1.5rem
 }
 
 h4 {
-    font-size: 32pt;
+    font-size: 4rem;
     font-weight: 200;
 }
 
 h5 {
-    font-size: 14pt;
+    font-size: 1.15rem;
     font-weight: 500;
 }
 
 h6 {
-    font-size: 18pt;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
 p {
-    margin-bottom: 18pt;
-    font-size: 18pt;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 button {
@@ -79,12 +79,12 @@ header {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 32px;
+    padding: 2rem;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 2;
-    border-bottom: 2px transparent solid;
+    border-bottom: 0.25rem transparent solid;
 }
 
 a.accent-link:link, a.accent-link:visited {
@@ -97,7 +97,7 @@ a.accent-link:link:hover, a.accent-link:visited:hover {
 
 header.border {
     transition: border-bottom 0.5s;
-    border-bottom: 2px var(--border) solid;
+    border-bottom: 0.25rem var(--border) solid;
 }
 
 header a:link, nav a:link, header a:visited, nav a:visited {
@@ -110,7 +110,7 @@ header a:link, nav a:link, header a:visited, nav a:visited {
 }
 
 #header-right-span {
-    gap: 32px;
+    gap: 2rem;
     text-align: right;
     display: flex;
     align-items: center;
@@ -118,11 +118,11 @@ header a:link, nav a:link, header a:visited, nav a:visited {
 
 nav {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
 }
 
 nav a {
-    font-size: 14pt;
+    font-size: 1.17rem;
     font-weight: 600;
 }
 
@@ -135,8 +135,8 @@ nav a {
 }
 
 .icon {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     filter: var(--filter);
     transition: transform, 0.5s;
 }
@@ -146,8 +146,8 @@ nav a {
 }
 
 .icon.small {
-    width: 24px;
-    height: 24px;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .icon.small:hover {
@@ -155,8 +155,8 @@ nav a {
 }
 
 .icon.big {
-    width: 50px;
-    height: 50px;
+    width: 3rem;
+    height: 3rem;
 }
 
 .icon.big:hover {
@@ -169,5 +169,5 @@ nav a {
 }
 
 .section-header {
-    margin-bottom: 64px;
+    margin-bottom: 3rem;
 }
