@@ -40,7 +40,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -jinja2
+          pip install jinja2
 
       - name: Run site generation script
         run: |
