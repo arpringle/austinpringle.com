@@ -72,6 +72,7 @@
             "id": "austinpringle.com",
             "name-nice": "austinpringle.com",
             "description": "My personal portfolio website, the one you are currently on. It's a static site with some basic JavaScript enhancements. Additionally, I use a custom Python script to help generate some of the pages from a JSON description.",
+            "link": "https://github.com/arpringle/austinpringle.com",
             "tags": [
                 "github",
                 "js",
@@ -82,6 +83,7 @@
             "id": "asciidoc-pdfgen",
             "name-nice": "asciidoc-pdfgen",
             "description": "PDF generator",
+            "link": "TODO",
             "tags": [
                 "git",
                 "github",
