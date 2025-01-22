@@ -24,14 +24,14 @@ for tag in project_tags:
 
 skill_grid_html_string = textwrap.indent(skill_grid_html_string, "                    ")
 
-index_html = open("../index.html", "w")
+index_html = open(os.path.join(script_dir, "./output/index.html"), "w")
 index_html.write(index_template.render(skill_grid_items=skill_grid_html_string))
 
 # Create the technology-specific pages
 skill_page_template = Template(open(os.path.join(script_dir, "./templates/skill-page.html"), "r").read())
 
-os.makedirs(os.path.join(script_dir, "../projects"), exist_ok=True)
+os.makedirs(os.path.join(script_dir, "./output/projects/"), exist_ok=True)
 
 for tag in project_tags:
-    skill_page_html = open(os.path.join(script_dir, "../projects/" + tag["id"] + ".html"), "w")
+    skill_page_html = open(os.path.join(script_dir, "./output/projects/" + tag["id"] + ".html"), "w")
     skill_page_html.write(skill_page_template.render(technology_name=tag["name-nice"]))
