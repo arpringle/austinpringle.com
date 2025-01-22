@@ -4,7 +4,7 @@
  *
  *  Description: Stylesheet for the homepage of austinpringle.com
  *
- *  Author: Copyright 2024 Austin Pringle
+ *  Author: Copyright 2025 Austin Pringle
  *
  *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
  *  Public License as published by the Free Software Foundation, either version 3 of the License,
@@ -26,7 +26,7 @@ main {
     display: flex;
     flex-direction: row;
     margin-top: 3vh;
-    margin-bottom: 10vh;
+    margin-bottom: 7vh;
     width: fit-content;
     align-items: center;
     justify-content: center;
@@ -73,15 +73,13 @@ main {
     animation: bounce 5s ease infinite;
 }
 
-#skill-grid {
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
     align-self: center;
-    align-items: center;
     justify-content: center;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
-    gap: 2rem;
-    justify-items: center;
+    gap: 1rem;
 }
 
 .skill-grid-item-link, .skill-grid-item-link:link {
@@ -100,41 +98,32 @@ main {
 
 .skill-grid-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: var(--border);
-    border-radius: 3rem;
-    width: 25rem;
-    height: 25rem;
+    border-radius: 1rem;
+    width: fit-content;
+    height: fit-content;
     padding: 2rem;
     transition: transform 0.5s;
+    gap: 2rem;
+    align-items: center;
 }
 
 .skill-grid-item:hover {
     transform: scale(1.05);
 }
 
-.skill-grid-item-header {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 2rem;
-    transition: background-color 1s;
-}
-
-.skill-grid-item-header img {
+.skill-grid-item img {
     height: 4rem;
     width: 4rem;
 }
 
-.projects-link-span {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    align-self: flex-end;
-    margin-top: auto;
-    width: fit-content;
+#resume-link {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.skill-grid-item:hover .projects-link-span img {
-    animation: point 3s ease infinite;
+#resume-tile {
+    margin: auto;
 }

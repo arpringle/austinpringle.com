@@ -4,7 +4,7 @@
  *
  *  Description: Stylesheet for the blog page of austinpringle.com
  *
- *  Author: Copyright 2024 Austin Pringle
+ *  Author: Copyright 2025 Austin Pringle
  *
  *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
  *  Public License as published by the Free Software Foundation, either version 3 of the License,
@@ -18,5 +18,21 @@ main {
 }
 
 .blog-date-line {
-    margin-bottom: 5em;
+    margin-bottom: 3rem;
 }
+
+pre {
+    background-color: var(--border);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+    overflow: scroll;
+}
+
+pre code {
+    font-size: 1rem;
+}
+
+code {
+    background-color: var(--border) !important;
+} 

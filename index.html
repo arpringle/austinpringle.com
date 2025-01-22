@@ -5,7 +5,7 @@
 
     Description: Homepage for austinpringle.com
 
-    Author: Copyright 2024 Austin Pringle
+    Author: Copyright 2025 Austin Pringle
 
     This file is free: you can redistribute it and/or modify it under
     the terms of the GNU General Public License as published by the
@@ -21,12 +21,25 @@
 <html lang="en">
     <head>
         <title>Austin Pringle</title>
+
+        <!--Mastodon Verification-->
         <link rel="me" href="https://mas.to/@apringle828"/>
+
+        <!--
+            Prefetch the icons for the color scheme switcher. If we don't do this, the icon might
+            disappear briefly when the mode is changed as the client scrambles to download it.
+        -->
         <link rel="prefetch" href="icons/sun-bright.svg"/>
         <link rel="prefetch" href="icons/moon.svg"/>
+
+        <!--Styles-->
         <link rel="stylesheet" href="styles/styles.css"/>
         <link rel="stylesheet" href="styles/index.css"/>
+
+        <!--Color scheme switcher-->
         <script src="scheme-switcher.js"></script>
+
+        <!--Manages header border-->
         <script src="header-scroll.js"></script>
     </head>
     <body>
@@ -36,7 +49,7 @@
             </span>
             <span id="header-right-span">
                 <nav>
-                    <a href="projects.html">Projects</a>
+                    <a href="projects/.">Projects</a>
                     <a href="blog.html">Blog</a>
                 </nav>
                 <button id="color-scheme-button" hidden="true" title="Toggle Dark Mode">
@@ -58,8 +71,8 @@
                         PennWest California</a>
                     </h2>
                     <p>
-                        Hello! My name is Austin Pringle. I'm a student pursuing a degree in Computer
-                        Information Systems, with a minor in Computer Science.
+                        Hello! My name is Austin Pringle. I'm a student pursuing a degree in
+                        Computer Information Systems, with a minor in Computer Science.
                     </p>
                     <p>
                         I can program in several languages, and I enjoy designing and implementing
@@ -85,63 +98,90 @@
         </div>
         <main>
             <div class="content-section">
-                <span class="section-header-span">
-                    <hr style="display: none;"/>
-                    <h4 class="section-header">My Skills</h4>
-                    <hr style="display: none;"/>
-                </span>
-                <div id="skill-grid">
-                    <a href="projects.html" class="skill-grid-item-link">
+                <div class="section-header-div">
+                    <h4 class="section-header">Technologies & Programming Languages</h4>
+                    <p class="section-subtitle">
+                        <i>(Hint: click any skill to see some example projects!)</i>
+                    </p>
+                </div>
+                <div class="skill-grid">
+                    <a href="projects/bash.html" class="skill-grid-item-link">
                         <div class="skill-grid-item">
-                            <div class="skill-grid-item-header">
-                                <img src="pics/rust-logo.png"/>
-                                <h3>Rust</h3>
-                            </div>
-                            <p>
-                                I've built quite a few projects in Rust at this point. I have found
-                                that Rust is a very useful programming language when you need low-level
-                                performance without the memory-related pitfalls of a language such as
-                                C.
-                            </p>
-                            <span class="projects-link-span">
-                                <h6>See Rust Projects</h6>
-                                <img class="icon small" src="icons/angle-right.svg"/>
-                            </span>
+                            <img src="pics/bash-logo.png"/>
+                            <h3>Bash</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
                         </div>
-                    </a>
-                    <a href="projects.html" class="skill-grid-item-link">
+                    </a><a href="projects/c.html" class="skill-grid-item-link">
                         <div class="skill-grid-item">
-                            <div class="skill-grid-item-header">
-                                <img src="pics/python-logo.png"/>
-                                <h3>Python</h3>
-                            </div>
-                            <p>
-                                When it comes to rapid development, there's no competition; Python
-                                lets you get things done quickly. I've used Python for everything
-                                from one-off scripts to full GUI applications.
-                            </p>
-                            <span class="projects-link-span">
-                                <h6>See Python Projects</h6>
-                                <img class="icon small" src="icons/angle-right.svg"/>
-                            </span>
+                            <img src="pics/c-logo.png"/>
+                            <h3>C</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
                         </div>
-                    </a>
-                    <a href="projects.html" class="skill-grid-item-link">
+                    </a><a href="projects/cpp.html" class="skill-grid-item-link">
                         <div class="skill-grid-item">
-                            <div class="skill-grid-item-header">
-                                <img src="pics/gtk-logo.png"/>
-                                <h3>GTK</h3>
-                            </div>
-                            <p>
-                                GTK is a cross-platform GUI widget toolkit. It's written in C, but
-                                has language bindings for many different languages. I've used GTK
-                                to write a few GUI applications, and I've contributed code to a
-                                number of open-source GTK applications.
-                            </p>
-                            <span class="projects-link-span">
-                                <h6>See GTK Projects</h6>
-                                <img class="icon small" src="icons/angle-right.svg"/>
-                            </span>
+                            <img src="pics/cpp-logo.png"/>
+                            <h3>C++</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/git.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/git-logo.png"/>
+                            <h3>Git</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/github.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/github-logo.png"/>
+                            <h3>GitHub</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/gitlab.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/gitlab-logo.png"/>
+                            <h3>GitLab</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/gtk.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/gtk-logo.png"/>
+                            <h3>GTK</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/js.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/js-logo.png"/>
+                            <h3>JavaScript</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/linux.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/linux-logo.png"/>
+                            <h3>Linux</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/php.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/php-logo.png"/>
+                            <h3>PHP</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/python.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/python-logo.png"/>
+                            <h3>Python</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/sql.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/sql-logo.png"/>
+                            <h3>SQL</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
+                        </div>
+                    </a><a href="projects/rust.html" class="skill-grid-item-link">
+                        <div class="skill-grid-item">
+                            <img src="pics/rust-logo.png"/>
+                            <h3>Rust</h3>
+                            <img class="icon small" src="icons/angle-right.svg"/>
                         </div>
                     </a>
                 </div>

@@ -4,7 +4,7 @@
  *
  *  Description: CSS animation keyframes for austinpringle.com
  *
- *  Author: Copyright 2024 Austin Pringle
+ *  Author: Copyright 2025 Austin Pringle
  *
  *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
  *  Public License as published by the Free Software Foundation, either version 3 of the License,
@@ -73,11 +73,6 @@
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+  from {rotate: 0deg;}
+  to {rotate: 360deg;}
 }

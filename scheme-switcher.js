@@ -17,7 +17,6 @@ let mode = color_scheme_query.matches;
 
 let site_mode_set = false;
 
-// Read the cookie
 switch (document.cookie) {
     case "":
         site_mode_set = false;
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     let color_scheme_button_image = document.getElementById("color-scheme-button-image");
-    color_scheme_button_image.src = mode ? "icons/sun-bright.svg" : "icons/moon.svg";
+    color_scheme_button_image.src = mode ? "/icons/sun-bright.svg" : "/icons/moon.svg";
 
     // Ensure the animation class is removed after the animation ends
     color_scheme_button_image.addEventListener("animationend", function() {
@@ -64,7 +63,7 @@ function toggleColorScheme() {
     mode = !mode;
     let color_scheme_button_image = document.getElementById("color-scheme-button-image");
     color_scheme_button_image.classList.add("animate");
-    color_scheme_button_image.src = mode ? "icons/sun-bright.svg" : "icons/moon.svg";
+    color_scheme_button_image.src = mode ? "/icons/sun-bright.svg" : "/icons/moon.svg";
     updateColors();
     document.cookie = "mode=" + mode + ";"; // Update the cookie after toggling
 }

@@ -4,7 +4,7 @@
  *
  *  Description: Stylesheet for all pages austinpringle.com
  *
- *  Author: Copyright 2024 Austin Pringle
+ *  Author: Copyright 2025 Austin Pringle
  *
  *  This file is free: you can redistribute it and/or modify it under the terms of the GNU General
  *  Public License as published by the Free Software Foundation, either version 3 of the License,
@@ -73,7 +73,6 @@ button {
 }
 
 header {
-    transition: border-bottom 0.5s;
     background-color: var(--bg);    
     display: flex;
     justify-content: space-between;
@@ -122,12 +121,21 @@ nav {
 }
 
 nav a {
+    transition: transform 0.5s ease;
     font-size: 1.17rem;
     font-weight: 600;
 }
 
+nav a:hover {
+    transform: scale(1.1);
+}
+
+#color-scheme-button .icon{
+    margin: auto;
+}
+
 #color-scheme-button .icon.animate {
-    animation: spin 1s ease forwards;
+    animation: spin 1s ease;
 }
 
 .icon-link {
@@ -135,10 +143,10 @@ nav a {
 }
 
 .icon {
+    transition: transform 0.5s ease;
     width: 2rem;
     height: 2rem;
     filter: var(--filter);
-    transition: transform, 0.5s;
 }
 
 .icon:hover {
@@ -163,11 +171,26 @@ nav a {
     transform: none;
 }
 
+.icon.no-hover:hover {
+    transform: none;
+}
+
 .content-section {
     display: flex;
     flex-direction: column;
+    margin-top: 8rem;
+}
+
+.content-section.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.section-header-div {
+    margin-bottom: 3rem;
 }
 
 .section-header {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
