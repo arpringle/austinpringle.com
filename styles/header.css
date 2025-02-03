@@ -1,0 +1,71 @@
+header {
+    background-color: var(--bg);    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2rem;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-bottom: 0.25rem transparent solid;
+}
+
+a.accent-link:link:hover, a.accent-link:visited:hover {
+    color: lightcoral;
+}
+
+header.border {
+    transition: border-bottom 0.5s;
+    border-bottom: 0.25rem var(--border) solid;
+}
+
+header a:link, nav a:link, header a:visited, nav a:visited {
+    text-decoration: none;
+    color: var(--txt);
+}
+
+#header-left-span {
+    text-align: left;
+}
+
+#header-title {
+    transition: opacity 0.25s;
+}
+
+#header-right-span {
+    gap: 2rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    transition: transform 0.5s ease;
+    font-size: 1.17rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+#color-scheme-button .icon{
+    margin: auto;
+}
+
+#color-scheme-button .icon.animate {
+    animation: spin 1s ease;
+}
+
+@keyframes spin {
+    from {rotate: 0deg;}
+    to {rotate: 360deg;}
+  }
+  

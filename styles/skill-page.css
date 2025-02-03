@@ -1,0 +1,45 @@
+main {
+    margin-left: 16vw;
+    margin-right: 16vw;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--txt);
+}
+
+.project-tile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--border);
+    border-radius: 1rem;
+    width: 32rem;
+    height: 16rem;
+    transition: transform 0.5s;
+    gap: 2rem;
+    border: 0.5rem solid var(--border);
+}
+
+.project-tile:hover {
+    transform: scale(1.025);
+}
+
+.project-tile img {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.project-tile *:not(img) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
