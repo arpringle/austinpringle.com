@@ -12,28 +12,9 @@
  *
  */
 @media screen and (orientation: portrait) {
-    #intro-box {
-        gap: 2.5rem !important;
-        flex-direction: column !important;
-    }
 
     h1, h2, h3, h4, h5, h6, .section-subtitle {
         text-align: center !important;
-    }
-    
-    #location-span {
-        justify-content: center !important;
-    }
-
-    #icons {
-        justify-content: center !important;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    #intro-box{
-        border: none !important;
-        padding: 0px !important;
     }
 }
 

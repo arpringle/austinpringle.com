@@ -118,12 +118,28 @@ main {
     width: 4rem;
 }
 
-#resume-link {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* ANIMATIONS */
 
-#resume-tile {
-    margin: auto;
+@keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(10px);
+    }
+    30% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
