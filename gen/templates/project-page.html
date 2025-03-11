@@ -40,7 +40,16 @@
     <body>
 {{ header }}
         <main>
-            <h1>{{ technology_name }}</h1>
+            <h1>{{ project_name }}</h1>
+{{ project_page_contents }}
+            <div class="learn-more-tile-link-container">
+                <a href="{{ link }}" class="learn-more-tile-link">
+                    <div class="learn-more-tile">
+                        <h3>More About {{ project_name }}</h3>
+                        <img class="icon small" src="/icons/angle-right.svg"/>
+                    </div>
+                </a>
+            </div>
         </main>
     </body>
 </html>

@@ -71,7 +71,6 @@
         {
             "id": "asciidoc-pdfgen",
             "name-nice": "asciidoc-pdfgen",
-            "description": "A command-line program to generate PDFs from AsciiDoc documents. The output is themeable with CSS. The project is a work-in-progress.",
             "link": "TODO",
             "tags": [
                 "git",
@@ -82,7 +81,6 @@
         {
             "id": "austinpringledotcom",
             "name-nice": "austinpringle.com",
-            "description": "My personal portfolio website, the one you are currently on. It's a static site with some basic JavaScript enhancements. Additionally, I use a custom Python script to help generate some of the pages from a JSON description.",
             "link": "https://github.com/arpringle/austinpringle.com",
             "tags": [
                 "git",

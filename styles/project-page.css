@@ -1,0 +1,39 @@
+main {
+    margin-left: 16vw;
+    margin-right: 16vw;
+}
+
+.learn-more-tile-link-container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5rem;
+}
+
+.learn-more-tile-link {
+    color: var(--txt);
+    text-decoration: none;
+    width: fit-content;
+}
+
+.learn-more-tile-link:link:hover {
+    color: var(--txt);
+    text-decoration: none;
+}
+
+.learn-more-tile {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--border);
+    border-radius: 1rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 2rem;
+    transition: transform 0.5s;
+    gap: 2rem;
+    align-items: center;
+}
+
+.learn-more-tile:hover {
+    transform: scale(1.05);
+}
