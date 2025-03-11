@@ -80,10 +80,10 @@ for tag in project_tags:
     skill_page_html = open("./.public/projects/" + tag["id"] + ".html", "w")
     skill_page_html.write(skill_page_template.render(header=header_html_string, technology_id=tag["id"], technology_name=tag["name-nice"]))
 
-# TODO
+# TODO: Fully implement blog
 blog_template = Template(open("./templates/blog.html", "r").read())
 blog_rendered = blog_template.render(header=header_html_string)
-blog_html = open("./.public/projects/blog.html", "w")
+blog_html = open("./.public/blog.html", "w")
 blog_html.write(blog_rendered)
 
 
