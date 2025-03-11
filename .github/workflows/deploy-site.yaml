@@ -25,7 +25,7 @@ jobs:
 
     - name: Run Python script to generate HTML
       run: |
-        python ./gen/site_gen.py
+        python ./gen/site-gen.py
 
     - name: Upload static files as artifact
       id: deployment
