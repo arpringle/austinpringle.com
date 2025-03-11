@@ -27,18 +27,19 @@ jobs:
       run: |
         python ./gen/site-gen.py
 
+    - name: Add CNAME file for custom domain
+      run: echo "austinpringle.com" > ./gen/.public/CNAME
+
     - name: Upload static files as artifact
       id: deployment
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./gen/.public/
-  
-  deploy:
 
+  deploy:
     environment:
       name: github-pages
-      url: austinpringle.com
-
+      url: https://austinpringle.com # Replace with your custom domain
     permissions:
       contents: read
       pages: write
