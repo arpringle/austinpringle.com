@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--
 
-    Filename: php.html
+    Filename: blog.html
 
-    Description: Project page featuring PHP projects for austinpringle.com
+    Description: Blog section of austinpringle.com
 
     Author: Copyright 2025 Austin Pringle
 
@@ -20,22 +20,23 @@
 -->
 <html lang="en">
     <head>
-        <title>Austin Pringle - PHP Projects</title>
+        <title>Austin Pringle - Blog</title>
+        <!--
+            Prefetch the icons for the color scheme switcher. If we don't do this, the icon might
+            disappear briefly when the mode is changed as the client scrambles to download it.
+        -->
         <link rel="prefetch" href="/icons/sun-bright.svg"/>
         <link rel="prefetch" href="/icons/moon.svg"/>
 
         <!--Styles-->
         <link rel="stylesheet" href="/styles/styles.css"/>
-        <link rel="stylesheet" href="/styles/header.css"/>
         <link rel="stylesheet" href="/styles/color-schemes.css"/>
+        <link rel="stylesheet" href="/styles/header.css"/>
         <link rel="stylesheet" href="/styles/adaptive.css"/>
-        <link rel="stylesheet" href="/styles/skill-page.css"/>
-
-        <!--Color scheme switcher-->
-        <script src="/scheme-switcher.js"></script>
-
-        <!--Manages header border-->
-        <script src="/header-border-scroll.js"></script>
+        <link rel="stylesheet" href="/styles/blog.css">
+        
+        <script src="/scripts/scheme-switcher.js"></script>
+        <script src="/scripts/header-border-scroll.js"></script>
     </head>
     <body>
         <header class="border" id="sticky-header">
@@ -53,10 +54,7 @@
             </span>
         </header>
         <main>
-            <h1>PHP</h1>
-            <div class="skill-grid">
-
-            </div>
+            <h1>Coming Soon!</h1>
         </main>
     </body>
 </html>
