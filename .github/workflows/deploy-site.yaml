@@ -39,7 +39,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://austinpringle.com # Replace with your custom domain
+      url: ${{ steps.deployment.outputs.page_url}}
     permissions:
       contents: read
       pages: write
