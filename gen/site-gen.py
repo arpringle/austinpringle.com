@@ -21,6 +21,9 @@ os.mkdir("./.public/projects")
 site_description_file = open("./site-desc.json", "r")
 site_description = json.load(site_description_file)
 
+header_html_string = open("./templates/header.html").read()
+header_html_string = textwrap.indent(header_html_string, "        ")
+
 #
 # Create the technology-specific tiles on index.html
 #
@@ -41,7 +44,7 @@ for tag in project_tags:
 skill_grid_html_string = textwrap.indent(skill_grid_html_string, "                    ")
 
 index_html = open("./.public/index.html", "w")
-index_html.write(index_template.render(skill_grid_items=skill_grid_html_string))
+index_html.write(index_template.render(skill_grid_items=skill_grid_html_string, header=header_html_string))
 
 #
 # Create reusable project tiles to show on the various "skill" pages
@@ -63,7 +66,7 @@ for project in projects:
 project_tiles_concatenated = textwrap.indent(project_tiles_concatenated, "                ")
 
 projects_index_template = Template(open("./templates/projects-index.html", "r").read())
-projects_index_rendered = projects_index_template.render(projects=project_tiles_concatenated)
+projects_index_rendered = projects_index_template.render(header=header_html_string, projects=project_tiles_concatenated)
 
 projects_index_html = open("./.public/projects/index.html", "w")
 projects_index_html.write(projects_index_rendered)
@@ -75,7 +78,14 @@ skill_page_template = Template(open("./templates/skill-page.html", "r").read())
 
 for tag in project_tags:
     skill_page_html = open("./.public/projects/" + tag["id"] + ".html", "w")
-    skill_page_html.write(skill_page_template.render(technology_id=tag["id"], technology_name=tag["name-nice"]))
+    skill_page_html.write(skill_page_template.render(header=header_html_string, technology_id=tag["id"], technology_name=tag["name-nice"]))
+
+# TODO
+blog_template = Template(open("./templates/blog.html", "r").read())
+blog_rendered = blog_template.render(header=header_html_string)
+blog_html = open("./.public/projects/blog.html", "w")
+blog_html.write(blog_rendered)
+
 
 shutil.copytree("../icons", "./.public/icons");
 shutil.copytree("../pics", "./.public/pics");
@@ -84,6 +94,3 @@ shutil.copytree("../scripts", "./.public/scripts");
 shutil.copytree("../styles", "./.public/styles");
 
 shutil.copy("../favicon.ico", "./.public/favicon.ico")
-
-#TODO
-shutil.copy("./templates/blog.html", "./.public/blog.html")
