@@ -43,7 +43,7 @@ skill_grid_html_string = ""
 index_template = Template(open("./templates/index.html", "r").read())
 
 # Create the tiles and append them to the string
-for tag in project_tags:
+for tag in project_tags.values():
     tag_id = tag["id"]
     tag_name = tag["name-nice"]
     result = skill_grid_template.render(project_tag=tag_id, tag_name_nice=tag_name)
@@ -90,7 +90,7 @@ projects_index_html.write(projects_index_rendered)
 
 # Now, we create the pages to show off projects that use a particular skill
 skill_page_template = Template(open("./templates/skill-page.html", "r").read())
-for tag in project_tags:
+for tag in project_tags.values():
     skill_page_html = open("./.public/projects/" + tag["id"] + ".html", "w")
     tiles = "\n".join(tags_to_project_render_dict[tag["id"]])
     tiles = textwrap.indent(tiles, "                ")
@@ -102,14 +102,19 @@ for tag in project_tags:
 # The contents for the project pages is at templates/project-pages/
 project_page_template = Template(open("./templates/project-page.html", "r").read())
 
+tag_chip_template = Template(open("./templates/tag-chip.html", "r").read())
+
 for project in projects:
     project_page_html = open("./.public/projects/" + project["id"] + ".html", "w")
     project_page_content = open("./templates/project-pages/" + project["id"] + ".html", "r").read()
     project_page_content = textwrap.indent(project_page_content, "            ")
-    project_page_rendered = project_page_template.render(header = header_html_string, project_name=project["name-nice"], project_page_contents=project_page_content, link=project["link"])
+    tag_chips_html_string = ""
+    for tag in project["tags"]:
+        tag_chip_rendered = tag_chip_template.render(tag=tag, skill_name = project_tags[tag]["name-nice"])
+        tag_chips_html_string += tag_chip_rendered + "\n"
+    tag_chips_html_string = textwrap.indent(tag_chips_html_string, "                    ")
+    project_page_rendered = project_page_template.render(header = header_html_string, project_name=project["name-nice"], project_page_contents=project_page_content, link=project["link"], tag_chips=tag_chips_html_string)
     project_page_html.write(project_page_rendered)
-
-
 
 # TODO: Fully implement blog
 blog_template = Template(open("./templates/blog.html", "r").read())

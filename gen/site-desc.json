@@ -1,77 +1,87 @@
 {
-    "project-tags": [
-        {
+    "project-tags": {
+        "bash": {
             "id": "bash",
             "name-nice": "Bash",
             "description": ""
         },
-        {
+
+        "c": {
             "id": "c",
             "name-nice": "C",
             "description": ""
         },
-        {
+
+        "cpp": {
             "id": "cpp",
             "name-nice": "C++",
             "description": ""
         },
-        {
+        
+        "git": {
             "id": "git",
             "name-nice": "Git",
             "description": ""
         },
-        {
+
+        "github": {
             "id": "github",
             "name-nice": "GitHub",
             "description": ""
         },
-        {
+
+        "gitlab": {
             "id": "gitlab",
             "name-nice": "GitLab",
             "description": ""
         },
-        {
+        
+        "gtk": {
             "id": "gtk",
             "name-nice": "GTK",
             "description": ""
         },
-        {
+
+        "js": {
             "id": "js",
             "name-nice": "JavaScript",
             "description": ""
         },
-        {
+
+        "linux": {
             "id": "linux",
             "name-nice": "Linux",
             "description": ""
         },
-        {
+        "php": {
             "id": "php",
             "name-nice": "PHP",
             "description": ""
         },
-        {
+
+        "python": {
             "id": "python",
             "name-nice": "Python",
             "description": ""
         },
-        {
+
+        "sql": {
             "id": "sql",
             "name-nice": "SQL",
             "description": ""
         },
-        {
+        "rust": {
             "id": "rust",
             "name-nice": "Rust",
             "description": ""
         }
-    ],
+    },
 
     "projects": [
         {
             "id": "asciidoc-pdfgen",
             "name-nice": "asciidoc-pdfgen",
-            "link": "TODO",
+            "link": "https://github.com/arpringle/asciidoc-pdfgen",
             "tags": [
                 "git",
                 "github",
