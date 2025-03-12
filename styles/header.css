@@ -12,10 +12,6 @@ header {
     border-bottom: 0.25rem transparent solid;
 }
 
-a.accent-link:link:hover, a.accent-link:visited:hover {
-    color: lightcoral;
-}
-
 header.border {
     transition: border-bottom 0.5s;
     border-bottom: 0.25rem var(--border) solid;
