@@ -12,6 +12,7 @@
  *
  */
 @import url("./font-faces/inter-variable/inter-variable.css");
+@import url("./font-faces/adwaita-mono/adwaita-mono.css");
 
 /* General reset of all margins*/
 * {
@@ -68,8 +69,17 @@ button {
     border-color: transparent;
 }
 
+code {
+    font-family: "Adwaita Mono";
+    background-color: var(--border);
+}
+
 a.accent-link:link, a.accent-link:visited {
-    color: crimson;
+    color: var(--accent-color);
+}
+
+a.accent-link:link:hover, a.accent-link:visited:hover {
+    color: lightcoral;
 }
 
 .icon-link {
