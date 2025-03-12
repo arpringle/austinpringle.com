@@ -19,13 +19,18 @@
   * classes in accordance with its own logic.
   */
 
+html {
+    --accent-color: crimson;
+    --accent-color-hover: coral;
+}
+  
 /* Light mode preference */
 @media (prefers-color-scheme: light) {
     html {
         /* Light mode color variables */
         --bg: white;
         --txt: black;
-        --border: rgb(225, 225, 225);
+        --border: rgb(223, 223, 223);
         --filter: none;
     }
 }
@@ -36,7 +41,7 @@
         /* Dark mode color variables */
         --bg: black;
         --txt: white;
-        --border: rgb(23, 23, 23);
+        --border: rgb(32, 32, 32);
         --filter: invert();
     }
 }
@@ -44,13 +49,13 @@
 .light-mode {
     --bg: white;
     --txt: black;
-    --border: rgb(225, 225, 225);
+    --border: rgb(223, 223, 223);
     --filter: none;
 }
 
 .dark-mode {
     --bg: black;
     --txt: white;
-    --border: rgb(23, 23, 23);
+    --border: rgb(32, 32, 32);
     --filter: invert();
 }
