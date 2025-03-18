@@ -59,7 +59,7 @@ h6 {
     font-weight: 500;
 }
 
-p {
+p, ul {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -69,9 +69,12 @@ button {
     border-color: transparent;
 }
 
-code {
+code, pre {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     font-family: "Adwaita Mono";
-    background-color: var(--border);
+    background-color: var(--border) !important;
+    border-radius: 0.5rem;
 }
 
 a.accent-link:link, a.accent-link:visited {
