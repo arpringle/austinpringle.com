@@ -98,6 +98,17 @@
                 "js",
                 "python"
             ]
+        },
+        {
+            "id": "pyviz",
+            "name-nice": "PyViz",
+            "link": "https://github.com/arpringle/pyviz",
+            "tags": [
+                "git",
+                "github",
+                "gtk",
+                "python"
+            ]
         }
     ]
 }
