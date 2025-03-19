@@ -33,10 +33,5 @@ def highlight_code_in_html(input_html):
         if parent_element.name == "pre":
             parent_element.clear()
             parent_element.append(code)
-    
-    head_tag = soup.find('head')
-    style_tag = soup.new_tag("style")
-    style_tag.string = HtmlFormatter(style="github-dark").get_style_defs('.highlight')
-    head_tag.insert(0, style_tag)
 
     return str(soup)
