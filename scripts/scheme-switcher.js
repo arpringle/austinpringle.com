@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     color_scheme_button.addEventListener("click", function() {
         site_mode_set = true;
         toggleColorScheme();
-        document.cookie = "mode=" + mode + ";";
+        document.cookie = "mode=" + mode + "; Path=/; SameSite=Strict;";
     });
 
     let color_scheme_button_image = document.getElementById("color-scheme-button-image");
@@ -65,7 +65,7 @@ function toggleColorScheme() {
     color_scheme_button_image.classList.add("animate");
     color_scheme_button_image.src = mode ? "/icons/sun-bright.svg" : "/icons/moon.svg";
     updateColors();
-    document.cookie = "mode=" + mode + ";"; // Update the cookie after toggling
+    document.cookie = "mode=" + mode + "; Path=/; SameSite=Strict;"; // Update the cookie after toggling
 }
 
 function updateColors() {
