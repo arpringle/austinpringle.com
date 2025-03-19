@@ -141,3 +141,75 @@ a.accent-link:link:hover, a.accent-link:visited:hover {
 .section-header {
     margin-bottom: 1rem;
 }
+
+.accent-button {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 1rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 2rem;
+    transition: transform 0.5s, background-color 0.5s;
+    gap: 2rem;
+    align-items: center;
+}
+
+.accent-button .icon {
+    filter: invert();
+}
+
+.accent-button:hover {
+    transform: scale(1.03);
+}
+
+.chip-holder {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    gap: 0.75rem;
+}
+
+.tags-div {
+    display: flex;
+    gap: 1.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tag-chip {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 1.5rem;
+    color: var(--txt);
+    background-color: var(--border);
+    transition: transform 0.5s;
+}
+
+.accent-button-link-container {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+}
+
+.accent-button-link, .tag-chip-link {
+    color: var(--txt);
+    text-decoration: none;
+    width: fit-content;
+}
+
+.accent-button-link:link:hover, .tag-chip-link:link:hover {
+    color: var(--txt);
+    text-decoration: none;
+}
+
+.tag-chip:hover {
+    transform: scale(1.05);
+}
