@@ -27,7 +27,7 @@ jobs:
 
     - name: Run Python script to generate HTML
       run: |
-        python ./gen/site-gen.py
+        python ./gen/site_gen.py
 
     - name: Add CNAME file for custom domain
       run: echo "austinpringle.com" > ./gen/.public/CNAME
