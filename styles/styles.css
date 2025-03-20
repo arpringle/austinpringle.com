@@ -186,7 +186,6 @@ a:link:hover *:not(:only-child){
     display: flex;
     flex-direction: row;
     background-color: var(--accent-color);
-    color: white;
     border-radius: 1rem;
     width: fit-content;
     height: fit-content;
@@ -196,8 +195,12 @@ a:link:hover *:not(:only-child){
     align-items: center;
 }
 
-.accent-button .icon {
+.accent-button > .icon {
     filter: invert();
+}
+
+.accent-button > h3 {
+    color: white !important;
 }
 
 .accent-button:hover {

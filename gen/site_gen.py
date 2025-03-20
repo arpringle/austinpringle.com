@@ -99,7 +99,13 @@ write_to_file(projects_index_html_path, projects_index_rendered)
 # Now, we create the pages to show off projects that use a particular skill
 skill_page_template = load_template("./templates/skill-page.html")
 for tag in project_tags.values():
-    tiles = "\n".join(tags_to_project_render_dict[tag["id"]])
+
+    # The if-else here is for the chance that a skill exists but a project using it has not been
+    # uploafed to the website.
+    if tags_to_project_render_dict[tag["id"]]:
+        tiles = "\n".join(tags_to_project_render_dict[tag["id"]])
+    else:
+        tiles = "<p style=\"margin-top: 4rem;\">Sorry, I have't uploaded any " + tag["name-nice"] + " projects yet. The projects I have saved locally will be uploaded soon!</p>"
     skill_page_rendered = skill_page_template.render(
         header=header_html_string,
         technology_id=tag["id"],
