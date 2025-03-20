@@ -107,22 +107,25 @@ pre * {
  * This behavior is strange, but prevents a lot of headaches with <a> elements with nested content
  * having random styles applied.
  */
-a:link:only-child {
+a:link {
     color: var(--accent-color);
     text-decoration: underline;
-}
+ }
 
-a:link:hover:only-child {
-    color: lightcoral;
-}
+a:link:hover {
+    color: coral;
+    text-decoration: underline;
+ }
 
 a:link *:not(:only-child) {
     color: var(--txt);
+    text-decoration: none;
 
 }
 
 a:link:hover *:not(:only-child){
     color: var(--txt);
+    text-decoration: none;
 }
 
 .icon-link {

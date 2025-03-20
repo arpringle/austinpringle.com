@@ -39,7 +39,11 @@ a {
     border-top-right-radius: 1rem;
 }
 
-.project-tile *:not(img) {
+.project-tile > *:not(img) {
     padding-left: 1.3rem;
     padding-right: 1.3rem;
+}
+
+.project-tile h3:only-child {
+    text-decoration: none;
 }
