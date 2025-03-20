@@ -1,0 +1,77 @@
+<p>
+    After what feels like ages of work, I am happy to announce that this website is officially
+    complete. There is still some work to be done (I haven't uploaded all my projects, there are
+    some rough edges that could use some polish, etc), however, I'm confident in saying that the
+    website is now in a presentable form. In this inaugural blog post, I'd like to share the
+    behind-the-scenes of how the site works, why I made the choices I made, and why I'd even make a
+    site like this in the first place.
+</p>
+<p>
+    We'll start with that latter-most point first: why did I make this website? Well, two reasons,
+    really. Firstly, I had never created a fully-functional website like this one from scratch
+    before, and it seemed like a fun challenge. It had exactly the right amount of complexity to
+    keep me engaged and learning. The other reason is that I simply needed something like this to
+    compile information about my various projects. Necessity is the mother of invention (or so I'm
+    told).
+</p>
+<p>
+    Now, as for the nuts-and-bolts of how the website works. The most interesting thing is that this
+    website is 100% static; the backend does nothing except serve HTML files. I accomplished this
+    by writing the site as a series of modular HTML template files. Then, to generate the final
+    site, a custom Python script stitches together the various template files, base off of
+    instructions in custom JSON site description files.
+</p>
+<p>
+    Now, as for the nuts-and-bolts of how the website works. The most interesting thing is that this
+    website is 100% static; the backend does nothing except serve HTML files. I accomplished this
+    by writing the site as a series of modular HTML template files. Then, to generate the final
+    site, a custom Python script stitches together the various template files, base off of
+    instructions in custom JSON site description files. It makes extensive use of the python
+    libraries <code>BeautifulSoup</code> and <code>jinja</code>.
+</p>
+<p>
+    One fun thing about having a website completely composed of static HTML is the ability to use
+    GitHub's "Pages" feature to host your whole site. This is what I do, and it (somewhat
+    surprisingly) works quite well! Whenever I <code>git push</code> to the website's GitHub repo,
+    a CI/CD pipeline that I set up will automatically run the Python script to create the website,
+    and then automatically deploy the site to the public internet with my custom domain. 
+</p>
+<p>
+    This, perhaps, is not the most orthodox approach to creating a portfolio site, but it was
+    certainly the one that interested me most.
+</p>
+<p>
+    Another feature I'm quite proud of is the color schemes. The site uses CSS media queries to
+    determine the user's preference for dark mode or light mode, and, allows the user to switch
+    between them using a handy toggle button (if JavaScript is enabled).
+</p>
+<p>
+    ...which leads me into another point. I intentionally used as little JavaScript as possible on
+    this project. I was curious if you could make a site that actually looks good without
+    client-side scripting. (I hope I've succeeded!) The site only contains a few JavaScript files,
+    for optional enhancements, and disabling JavaScript should not break the layout of the site.
+</p>
+<p>
+    The site also has syntax highlighting for <code>&lt;code&gt;</code> elements. For example,
+    here's a basic Python script:
+</p>
+<pre>
+    <code data-code-lang="python">
+    def main():
+        list = [1,2,3]
+        sum = 0
+        for item in list:
+            sum += item
+            this_is_a_very_long_function_call(with_a_very_long_parameter_list)
+        print(sum)
+    </code>
+</pre>
+<p>
+    The syntax highlighting is done at the time of the site generation, so JavaScript is not
+    required. It uses a handy Python library called <code>pygments</code>.
+</p>
+<p>
+    Overall, I'd say I learned a lot from this project. I'm looking forward to continually updating
+    this site as time goes on and I complete more projects. Thanks for taking the time to check out
+    my projects and read my blog post!
+</p>

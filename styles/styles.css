@@ -14,9 +14,11 @@
 @import url("./font-faces/inter-variable/inter-variable.css");
 @import url("./font-faces/adwaita-mono/adwaita-mono.css");
 
-/* General reset of all margins*/
+/* General reset of some problematic styles*/
 * {
     margin: 0px;
+    color: var(--txt);
+    text-decoration: none;
 }
 
 body {
@@ -77,12 +79,50 @@ code, pre {
     border-radius: 0.5rem;
 }
 
-a.accent-link:link, a.accent-link:visited {
-    color: var(--accent-color);
+pre {
+    margin-bottom: 1.5rem;
 }
 
-a.accent-link:link:hover, a.accent-link:visited:hover {
+pre code {
+    font-size: 1.25rem;
+}
+
+pre > code {
+    background-color: transparent !important;
+}
+
+pre > code *:not(div.highlight){
+    
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+pre * {
+    margin-bottom: 0rem;
+}
+
+/*
+ * The following selectors make it so a link only has color or decoration whenever it only has text
+ * content. <a><h1>test</h1></a> will not get styled, but <h1><a>test</a></h1> will.
+ * This behavior is strange, but prevents a lot of headaches with <a> elements with nested content
+ * having random styles applied.
+ */
+a:link:only-child {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+a:link:hover:only-child {
     color: lightcoral;
+}
+
+a:link *:not(:only-child) {
+    color: var(--txt);
+
+}
+
+a:link:hover *:not(:only-child){
+    color: var(--txt);
 }
 
 .icon-link {
@@ -212,4 +252,18 @@ a.accent-link:link:hover, a.accent-link:visited:hover {
 
 .tag-chip:hover {
     transform: scale(1.05);
+}
+
+a .blog-title-line {
+    color: var(--txt);
+    text-decoration: none;
+}
+
+h1.blog-title-line {
+    margin-top: 1rem;
+    margin-bottom: 0.5em;
+}
+
+.blog-date-line {
+    margin-bottom: 4rem;
 }

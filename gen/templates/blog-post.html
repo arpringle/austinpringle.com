@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--
 
-    Filename: {{ technology_id }}.html
+    Filename: blog/index.html
 
-    Description: Project page featuring {{ technology_name }} projects for austinpringle.com
+    Description: Blog section of austinpringle.com
 
     Author: Copyright 2025 Austin Pringle
 
@@ -20,31 +20,35 @@
 -->
 <html lang="en">
     <head>
-        <title>Austin Pringle - {{technology_name}} Projects</title>
+        <title>Austin Pringle - Blog</title>
+        <!--
+            Prefetch the icons for the color scheme switcher. If we don't do this, the icon might
+            disappear briefly when the mode is changed as the client scrambles to download it.
+        -->
         <link rel="prefetch" href="/icons/sun-bright.svg"/>
         <link rel="prefetch" href="/icons/moon.svg"/>
 
         <!--Styles-->
         <link rel="stylesheet" href="/styles/styles.css"/>
-        <link rel="stylesheet" href="/styles/header.css"/>
         <link rel="stylesheet" href="/styles/color-schemes.css"/>
+        <link rel="stylesheet" href="/styles/header.css"/>
         <link rel="stylesheet" href="/styles/adaptive.css"/>
-        <link rel="stylesheet" href="/styles/skill-page.css"/>
-
-        <!--Color scheme switcher-->
+        <link rel="stylesheet" href="/styles/pygments.css"/>
+        <link rel="stylesheet" href="/styles/blog.css">
+        
         <script src="/scripts/scheme-switcher.js"></script>
-
-        <!--Manages header border-->
         <script src="/scripts/header-border-scroll.js"></script>
     </head>
     <body>
 {{ header }}
         <main>
-            <h1>{{ technology_name }} Projects</h1>
-            <p>{{ description }}</p>
-            <div class="projects-grid">
-{{ project_tiles }}
-            </div>
+            <article>
+                <a href="/blog/{{ slug }}.html"><h1 class="blog-title-line">{{ post_title }}</h1></a>
+                <time><h6 class="blog-date-line">{{ date_line }}</h6></time>
+                <div>
+{{ post_content }}
+                </div>
+            </article>
         </main>
     </body>
 </html>

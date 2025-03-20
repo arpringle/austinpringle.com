@@ -31,4 +31,9 @@
         border: none !important;
         padding: 0px !important;
     }
+
+    .blog-post-preview {
+        margin-left: 0rem !important;
+        margin-right: 0rem !important;
+    }
 }

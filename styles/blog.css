@@ -17,22 +17,6 @@ main {
     margin-right: 16vw;
 }
 
-.blog-date-line {
-    margin-bottom: 3rem;
+article{
+    margin-bottom: 8rem;
 }
-
-pre {
-    background-color: var(--border);
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin-bottom: 2rem;
-    overflow: scroll;
-}
-
-pre code {
-    font-size: 1rem;
-}
-
-code {
-    background-color: var(--border) !important;
-} 

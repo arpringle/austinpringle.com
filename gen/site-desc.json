@@ -3,77 +3,79 @@
         "bash": {
             "id": "bash",
             "name-nice": "Bash",
-            "description": ""
+            "description": "Bash is the go-to scripting language for automating tasks in Unix-like environments. Whether it's writing quick one-liners or full-fledged automation scripts, I often use Bash to streamline workflows and system administration tasks."
         },
 
         "c": {
             "id": "c",
             "name-nice": "C",
-            "description": ""
+            "description": "Few programming languages can claim to have influenced the software development landscape as much as C. To this day, C is still behind some of the biggest projects out there, such as the Linux kernel, and it is still unmatched in many embedded applications. C was my first programming language, and I appreciate the low-level control and efficiency that it gives you over your program."
         },
 
         "cpp": {
             "id": "cpp",
             "name-nice": "C++",
-            "description": ""
+            "description": "C++ is the classic choice for object-oriented programming, offering high-level abstractions while retaining fine-grained memory control. It builds on C's foundations but expands possibilities with even more features."
         },
-        
+
         "git": {
             "id": "git",
             "name-nice": "Git",
-            "description": ""
+            "description": "Git is the top version control system, and for good reason: Git provides a simple and fast way to keep everyone in sync. All of my projects are hosted in Git, and I am highly comfortable using it."
         },
 
         "github": {
             "id": "github",
             "name-nice": "GitHub",
-            "description": ""
+            "description": "GitHub is the primary platform that I use for hosting and collaborating on projects. With its powerful issue tracking, the pull request workflow, and easy CI/CD integrations via GitHub actions; it is with good reason that it leads the pack."
         },
 
         "gitlab": {
             "id": "gitlab",
             "name-nice": "GitLab",
-            "description": ""
+            "description": "GitLab is a powerful alternative to GitHub, especially for self-hosted repositories. I appreciate its built-in CI/CD tools, and have extensive experience using it when contributing to the GNOME project, who use GitLab to host all of their source code."
         },
-        
+
         "gtk": {
             "id": "gtk",
             "name-nice": "GTK",
-            "description": ""
+            "description": "GTK is a cross-platform widget toolkit. It's written in C, but has language bindings to many other languages. It can be used by projects of any size, from one-off GUI control panels, to massive multi-application software suites. GTK is the GUI library used by the most popular Linux desktop environment, GNOME."
         },
 
         "js": {
             "id": "js",
             "name-nice": "JavaScript",
-            "description": ""
+            "description": "I primarily use vanilla JavaScript to enhance website interactivity, though I don't have experience with JS frameworks."
         },
 
         "linux": {
             "id": "linux",
             "name-nice": "Linux",
-            "description": ""
+            "description": "I have made extensive use of Linux in many different contexts. For instance, on the server-side, I have done many hobbyist deployments of web applications on Linux-based VPS servers. On the desktop side, I have used Debian Linux as my sole desktop operating system for the past several years."
         },
+
         "php": {
             "id": "php",
             "name-nice": "PHP",
-            "description": ""
+            "description": "PHP might not be the trendiest language anymore. However, when it comes to providing a method to inject some basic server-side functionality into an otherwise static web page, it is unmatched. While I wouldn't choose it for large projects today, its ease of use makes it ideal for simple web applications."
         },
 
         "python": {
             "id": "python",
             "name-nice": "Python",
-            "description": ""
+            "description": "Python is perhaps the most versatile tool at a modern programmer's disposal. With a simple, straight-forward syntax, friendly community, and libraries for nearly everything, Python leads the pack when it comes to scripting languages. I often prefer to use Python more on the development side rather than for end-user applications, though I have experience with both."
         },
 
         "sql": {
             "id": "sql",
             "name-nice": "SQL",
-            "description": ""
+            "description": "SQL is a time-tested tool for interacting with databases. Though no-SQL databases are often talked about, SQL's compatibility is unmatched. I have used MySQL, Oracle 10g, and PostgreSQL in the past."
         },
+
         "rust": {
             "id": "rust",
             "name-nice": "Rust",
-            "description": ""
+            "description": "Rust stands out for its memory safety, achieved without a garbage collector thanks to its unique ownership model and compile-time checks. When I need low-level performance, I often reach for Rust, because it is nice that I don't have to roll my own data structures like I might have to do in a language like C."
         }
     },
 
@@ -97,6 +99,18 @@
                 "github",
                 "js",
                 "python"
+            ]
+        },
+        {
+            "id": "patterns",
+            "name-nice": "Patterns",
+            "link": "https://gitlab.gnome.org/arpringle/patterns",
+            "tags": [
+                "c",
+                "git",
+                "gitlab",
+                "gtk",
+                "linux"
             ]
         },
         {

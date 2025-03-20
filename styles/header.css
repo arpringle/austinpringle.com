@@ -30,6 +30,11 @@ header a:link, nav a:link, header a:visited, nav a:visited {
     transition: opacity 0.25s;
 }
 
+#header-title > a {
+    color: var(--txt) !important;
+    text-decoration: none !important;
+}
+
 #header-right-span {
     gap: 2rem;
     text-align: right;

@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
+import textwrap
 
 def highlight_code_in_html(input_html):
     soup = BeautifulSoup(input_html, "html.parser")
@@ -21,7 +22,8 @@ def highlight_code_in_html(input_html):
             print(f"Warning: An invalid language \"{ lang }\" was passed in a code block.")
             continue
 
-        formatter = HtmlFormatter(nowrap=True, style="github-dark")
+        original_code = textwrap.dedent(original_code)
+        formatter = HtmlFormatter(nowrap=False, style="github-dark")
         highlighted_code = highlight(original_code, lexer, formatter)
         highlighted_code_html = BeautifulSoup(highlighted_code, "html.parser")
 

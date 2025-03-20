@@ -1,11 +1,12 @@
 import os
 import json
-import textwrap
 import shutil
+from bs4 import BeautifulSoup
 from collections import defaultdict
 from jinja2 import Template
 from highlight_code_blocks import highlight_code_in_html
 
+# Helper functions
 def load_template(path):
     with open(path, "r") as file:
         return Template(file.read())
@@ -25,6 +26,7 @@ if os.path.exists("./.public"):
     shutil.rmtree("./.public")
 os.mkdir("./.public")
 os.mkdir("./.public/projects")
+os.mkdir("./.public/blog")
 
 
 # Load the site description file
@@ -33,8 +35,6 @@ site_description = json.load(site_description_file)
 
 # Load the HTML for the page header, which will be reused on several pages
 header_html_string = open("./templates/header.html").read()
-header_html_string = textwrap.indent(header_html_string, "        ")
-
 
 # In this next section, we create a link tile for each possible "skill" that a project can be tagged
 # with; they  all link to a page showcasing projects that use that skill.
@@ -42,7 +42,7 @@ header_html_string = textwrap.indent(header_html_string, "        ")
 # Get all of the possible tags that can be applied to a project
 project_tags = site_description["project-tags"]
 
-# Open the template for the link tile (the skill-grid-item.html)
+# Open the template for the tile
 skill_grid_template = load_template("./templates/skill-grid-item.html")
 
 # All of the rendered tiles are appended to a single string, so they can easily be added to the
@@ -57,16 +57,7 @@ for tag in project_tags.values():
     tag_id = tag["id"]
     tag_name = tag["name-nice"]
     result = skill_grid_template.render(project_tag=tag_id, tag_name_nice=tag_name)
-    skill_grid_html_string = skill_grid_html_string + result + "\n"
-
-skill_grid_html_string = textwrap.indent(skill_grid_html_string, "                    ")
-
-# Render and write the finished homepage to file
-index_rendered = index_template.render(
-    skill_grid_items=skill_grid_html_string, header=header_html_string
-)
-index_html_path = "./.public/index.html"
-write_to_file(index_html_path, index_rendered)
+    skill_grid_html_string += result + "\n"
 
 # Now, we create tiles for all projects. These tiles are used on the "Projects" page, as well as the
 # pages dedicated to individual skills.
@@ -90,12 +81,12 @@ project_tiles_concatenated = ""
 # Render the project tiles, filling the dictionary and the concatenated string.
 for project in projects:
     project_tile_rendered = project_tile_template.render(
-        project_id=project["id"], project_name=project["name-nice"]
+        project_id=project["id"],
+        project_name=project["name-nice"]
     )
     for tag in project["tags"]:
         tags_to_project_render_dict[tag].append(project_tile_rendered)
     project_tiles_concatenated += project_tile_rendered
-project_tiles_concatenated = textwrap.indent(project_tiles_concatenated, "                ")
 
 # Create the Projects page
 projects_index_template = load_template("./templates/projects-index.html")
@@ -109,11 +100,11 @@ write_to_file(projects_index_html_path, projects_index_rendered)
 skill_page_template = load_template("./templates/skill-page.html")
 for tag in project_tags.values():
     tiles = "\n".join(tags_to_project_render_dict[tag["id"]])
-    tiles = textwrap.indent(tiles, "                ")
     skill_page_rendered = skill_page_template.render(
         header=header_html_string,
         technology_id=tag["id"],
         technology_name=tag["name-nice"],
+        description=tag["description"],
         project_tiles=tiles,
     )
     skill_page_html_path = "./.public/projects/" + tag["id"] + ".html"
@@ -129,7 +120,6 @@ for project in projects:
     project_page_content = open(
         "./templates/project-pages/" + project["id"] + ".html", "r"
     ).read()
-    project_page_content = textwrap.indent(project_page_content, "            ")
     tag_chips_html_string = ""
 
     for tag in project["tags"]:
@@ -137,7 +127,6 @@ for project in projects:
             tag=tag, skill_name=project_tags[tag]["name-nice"]
         )
         tag_chips_html_string += tag_chip_rendered + "\n"
-    tag_chips_html_string = textwrap.indent(tag_chips_html_string, "                    ")
     
     project_page_rendered = project_page_template.render(
         header=header_html_string,
@@ -150,11 +139,71 @@ for project in projects:
     project_page_html_path = "./.public/projects/" + project["id"] + ".html"
     write_to_file(project_page_html_path, project_page_rendered)
 
-# TODO: Fully implement blog
-blog_template = load_template("./templates/blog.html")
-blog_rendered = blog_template.render(header=header_html_string)
-blog_html_path = "./.public/blog.html"
-write_to_file(blog_html_path, blog_rendered)
+# Load the JSON file that describes the blog post metadata.
+blog_posts_file = open("./blog-posts.json", "r")
+blog_posts_description = json.load(blog_posts_file)
+
+# Load the template for a blog post
+blog_post_template = load_template("./templates/blog-post.html")
+
+list_of_rendered_blog_posts = list()
+
+# Create all blog posts, looking up their content in the appropriate directory
+for post in blog_posts_description:
+    post_title = post["title"]
+    post_date_line = post["publish-date"]
+    slug = post["slug"]
+    post_content = open("../blog-posts/" + slug + ".html").read()
+    rendered_post = blog_post_template.render(
+        header = header_html_string,
+        slug = slug,
+        post_title = post_title,
+        date_line = post_date_line,
+        post_content = post_content
+    )
+    rendered_post = highlight_code_in_html(rendered_post)
+
+    # Using BeautifulSoup, extract just the <article> portion of the blog post, for use on other
+    # pages. The blog index does not need the <head> element or the <header>
+    blog_post_article = str(BeautifulSoup(rendered_post, "html.parser").find_all("article")[0])
+    list_of_rendered_blog_posts.append(blog_post_article)
+    write_to_file("./.public/blog/" + slug + ".html", rendered_post)
+
+# Get one continuous string of the HTML for all blog posts
+all_posts_html = "\n".join(list_of_rendered_blog_posts)
+
+# Create the blog post index page
+blog_index_template = load_template("./templates/blog-index.html")
+blog_index_rendered = blog_index_template.render(header=header_html_string, posts = all_posts_html)
+blog_index_html_path = "./.public/blog/index.html"
+write_to_file(blog_index_html_path, blog_index_rendered)
+
+# We get the latest blog post, only showing the first two paragraphs, cutting off the last few words
+# of the second paragraph and ellipsizing it.
+latest_blog_post = list_of_rendered_blog_posts[-1]
+
+latest_blog_post_soup = BeautifulSoup(latest_blog_post, "html.parser")
+latest_blog_post_first_two_paragraphs = latest_blog_post_soup.find_all("p")[0:2]
+
+latest_blog_post_para2_words_only = latest_blog_post_first_two_paragraphs[1].text.split()
+latest_blog_post_para2_ellipsized = " ".join(latest_blog_post_para2_words_only[:-5]) + "..."
+
+latest_blog_post_first_two_paragraphs[1].clear()
+latest_blog_post_first_two_paragraphs[1].append(latest_blog_post_para2_ellipsized)
+post_content_div = latest_blog_post_soup.find_all("div")[0]
+post_content_div.clear()
+for paragraph in latest_blog_post_first_two_paragraphs:
+    post_content_div.append(paragraph)
+
+# Render and write the finished homepage to file
+index_rendered = index_template.render(
+    header=header_html_string,
+    skill_grid_items=skill_grid_html_string,
+    latest_blog_post = str(latest_blog_post_soup),
+    slug = blog_posts_description[-1]["slug"]
+)
+index_html_path = "./.public/index.html"
+write_to_file(index_html_path, index_rendered)
 
 # I could have done this part in the workflow file, but it's probably best to keep all of the file
 # operations in one place.

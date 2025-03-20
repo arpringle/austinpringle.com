@@ -37,6 +37,7 @@
         <link rel="stylesheet" href="/styles/color-schemes.css"/>
         <link rel="stylesheet" href="/styles/header.css"/>
         <link rel="stylesheet" href="/styles/adaptive.css"/>
+        <link rel="stylesheet" href="/styles/pygments.css"/>
         <link rel="stylesheet" href="/styles/index.css"/>
         <link rel="stylesheet" href="/styles/index-adaptive.css"/>
 
@@ -51,7 +52,7 @@
 {{ header }}
         <div id="intro-holder">
             <div id="intro-box">
-                <img id=pfp src="/pics/pfp.jpeg">
+                <img id=pfp src="/pics/pfp-new.jpg">
                 <div id="intro-text-box">
                     <h1 id="intro-box-header">Austin Pringle</h1>
                     <span id="location-span">
@@ -59,7 +60,7 @@
                         <h5>Pittsburgh, PA</h5>
                     </span>
                     <h2>
-                        Student at <a href="https://pennwest.edu" class="accent-link">
+                        Student at <a href="https://pennwest.edu">
                         PennWest California</a>
                     </h2>
                     <p>
@@ -91,11 +92,36 @@
         <main>
             <div class="content-section">
                 <div class="section-header-div">
+                    <h4>About Me</h4>
+                </div>
+                <p>Hello! &#128075;&#127995; My name is Austin Pringle.</p>
+                <p>
+                    I'm a Pittsburgh-area native with a strong passion for open-source software,
+                    DevOps, and systems development. My journey into building computer systems began
+                    in middle school, where I explored game development using Unreal Engine 4's
+                    "Blueprint", a graphical, node-based video game scripting system. This early
+                    curiosity evolved into a deep interest in software engineering and deployment,
+                    leading me to learn about and work on both the developmental and operational
+                    aspects of software.
+                </p>
+                <p>
+
+                    Through my academic and personal projects, I've gained experience in software
+                    engineering, system administration, and DevOps, enjoying roles that bridge these
+                    worlds of development. I thrive in environments where I can contribute to both
+                    development and deployment of development and deploymen, ensuring efficient,
+                    scalable, and well-integrated solutions. I'm currently seeking full-time
+                    opportunities where I can apply my technical expertise and passion for
+                    innovation to real-world challenges.  
+                </p>
+            </div>
+            <div class="content-section">
+                <div class="section-header-div">
                     <h4 class="section-header">Technologies & Programming Languages</h4>
                     <p class="section-subtitle">
                         <i>(Hint: click any skill to see some example projects!)</i>
                     </p>
-                </div>
+                </div> 
                 <div class="skill-grid">
 {{ skill_grid_items }}
                 </div>
@@ -107,15 +133,29 @@
                 <p>
                     Are you interested in working with me in a professional capacity? If so,
                     you can find my resume down below! I am currently seeking full-time
-                    employment. I would love to work with you or your company!
+                    employment, and I would love to work with you or your company!
                 </p>
                 <div class="accent-button-link-container">
                     <a href="/content/resume.pdf" class="accent-button-link">
                         <div class="accent-button">
-                            <h3>Download my Resume</h3>
+                            <h3>Download Resume</h3>
                             <img class="icon small" src="/icons/arrow-down-to-line.svg"/>
                         </div>
                     </a>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="section-header-div">
+                    <h4 class="section-header">Latest Blog Post</h4>
+                </div>
+                <div class="blog-post-preview">
+{{latest_blog_post}}
+                <a href="/blog/{{ slug }}.html">
+                    <div class="blog-preview-read-more">
+                        <p>Read More</p>
+                        <img class="icon small" src="/icons/angle-right.svg"/>
+                    </div>
+                </a>
                 </div>
             </div>
         </main>

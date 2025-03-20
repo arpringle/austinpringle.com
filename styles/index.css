@@ -16,6 +16,10 @@ main {
     margin-right: 8vw;
 }
 
+body {
+    margin-bottom: 8rem !important;
+}
+
 #intro-holder {
     display: flex;
     justify-content: center;
@@ -116,6 +120,26 @@ main {
 .skill-grid-item img {
     height: 4rem;
     width: 4rem;
+}
+
+.blog-post-preview {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border: 0.5rem solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.blog-preview-read-more {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 0.5rem;
+}
+
+.blog-preview-read-more p {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* ANIMATIONS */
