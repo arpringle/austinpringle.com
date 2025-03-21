@@ -101,32 +101,15 @@ pre * {
     margin-bottom: 0rem;
 }
 
-/*
- * The following selectors make it so a link only has color or decoration whenever it only has text
- * content. <a><h1>test</h1></a> will not get styled, but <h1><a>test</a></h1> will.
- * This behavior is strange, but prevents a lot of headaches with <a> elements with nested content
- * having random styles applied.
- */
 a:link {
     color: var(--accent-color);
-    text-decoration: underline;
+    text-decoration: none;
  }
 
 a:link:hover {
     color: coral;
-    text-decoration: underline;
+    text-decoration: none;
  }
-
-a:link *:not(:only-child) {
-    color: var(--txt);
-    text-decoration: none;
-
-}
-
-a:link:hover *:not(:only-child){
-    color: var(--txt);
-    text-decoration: none;
-}
 
 .icon-link {
     text-decoration: none;
