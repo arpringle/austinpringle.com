@@ -69,7 +69,7 @@
         "sql": {
             "id": "sql",
             "name-nice": "SQL",
-            "description": "SQL is a time-tested tool for interacting with databases. Though no-SQL databases are often talked about, SQL's compatibility is unmatched. I have used MySQL, Oracle 10g, and PostgreSQL in the past."
+            "description": "SQL is a time-tested tool for interacting with databases. Though no-SQL databases are often talked about, SQL's compatibility is unmatched. I have used MySQL, Oracle, and PostgreSQL in the past."
         },
 
         "rust": {
@@ -99,6 +99,17 @@
                 "github",
                 "js",
                 "python"
+            ]
+        },
+        {
+            "id": "notational",
+            "name-nice": "Notational",
+            "link": "https://gitlab.gnome.org/arpringle/notational",
+            "tags": [
+                "git",
+                "github",
+                "php",
+                "sql"
             ]
         },
         {
