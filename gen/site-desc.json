@@ -1,21 +1,9 @@
 {
     "project-tags": {
-        "bash": {
-            "id": "bash",
-            "name-nice": "Bash",
-            "description": "Bash is the go-to scripting language for automating tasks in Unix-like environments. Whether it's writing quick one-liners or full-fledged automation scripts, I often use Bash to streamline workflows and system administration tasks."
-        },
-
         "c": {
             "id": "c",
             "name-nice": "C",
             "description": "Few programming languages can claim to have influenced the software development landscape as much as C. To this day, C is still behind some of the biggest projects out there, such as the Linux kernel, and it is still unmatched in many embedded applications. C was my first programming language, and I appreciate the low-level control and efficiency that it gives you over your program."
-        },
-
-        "cpp": {
-            "id": "cpp",
-            "name-nice": "C++",
-            "description": "C++ is the classic choice for object-oriented programming, offering high-level abstractions while retaining fine-grained memory control. It builds on C's foundations but expands possibilities with even more features."
         },
 
         "git": {
