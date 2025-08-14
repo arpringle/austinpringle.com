@@ -81,16 +81,6 @@
 
     "projects": [
         {
-            "id": "asciidoc-pdfgen",
-            "name-nice": "asciidoc-pdfgen",
-            "link": "https://github.com/arpringle/asciidoc-pdfgen",
-            "tags": [
-                "git",
-                "github",
-                "rust"
-            ]
-        },
-        {
             "id": "austinpringledotcom",
             "name-nice": "austinpringle.com",
             "link": "https://github.com/arpringle/austinpringle.com",
@@ -133,6 +123,16 @@
                 "github",
                 "gtk",
                 "python"
+            ]
+        },
+        {
+            "id": "rusty-todo",
+            "name-nice": "rusty_todo",
+            "link": "https://github.com/arpringle/rusty_todo",
+            "tags": [
+                "git",
+                "github",
+                "rust"
             ]
         }
     ]
