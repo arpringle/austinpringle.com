@@ -90,18 +90,7 @@
                 "js",
                 "python"
             ]
-        },
-        {
-            "id": "notational",
-            "name-nice": "Notational",
-            "link": "https://github.com/arpringle/notational",
-            "tags": [
-                "git",
-                "github",
-                "php",
-                "sql"
-            ]
-        },
+        },  
         {
             "id": "patterns",
             "name-nice": "Patterns",
@@ -112,6 +101,17 @@
                 "gitlab",
                 "gtk",
                 "linux"
+            ]
+        },
+        {
+            "id": "phphired",
+            "name-nice": "PHPHired",
+            "link": "https://github.com/arpringle/phphired",
+            "tags": [
+                "git",
+                "github",
+                "js",
+                "php"
             ]
         },
         {
